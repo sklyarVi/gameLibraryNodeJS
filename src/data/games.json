@@ -1,0 +1,29 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Counter-Strike Global Offensive",
+      "genre" : "Action"
+    },
+    {
+      "id": 2,
+      "title": "Diablo",
+      "genre" : "RPG"
+    },
+    {
+      "id": 3,
+      "title": "League of Legends",
+      "genre" : "Moba"
+    },
+    {
+      "id": 4,
+      "title": "Tom Clancy Rainbow's six",
+      "genre" : "Action"
+    },
+    {
+      "id": 5,
+      "title": "Final Fantasy 8",
+      "genre" : "JRPG"
+    }
+  ]
+}
