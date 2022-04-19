@@ -1,0 +1,23 @@
+{
+  "name": "game-library-node-js",
+  "version": "1.0.0",
+  "description": "Study application, game data server for gamers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sklyarVi/gameLibraryNodeJS.git"
+  },
+  "keywords": [
+    "games",
+    "gamers"
+  ],
+  "author": "Tomasz Napierala, Jan Swięch, Vitaliy Sklyar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sklyarVi/gameLibraryNodeJS/issues"
+  },
+  "homepage": "https://github.com/sklyarVi/gameLibraryNodeJS#readme"
+}
