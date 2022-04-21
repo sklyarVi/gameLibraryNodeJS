@@ -16,6 +16,9 @@ npm i -D eslint-config-prettier
 
 npm i -D husky lint-staged
 
+
+
+
 -> Or you can just install all dependencies by:
 
 
@@ -23,6 +26,8 @@ npm install
 
 
 npm run dev
+
+
 
 
 To run app use this commands:
