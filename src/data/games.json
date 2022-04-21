@@ -13,7 +13,7 @@
     {
       "id": 3,
       "title": "League of Legends",
-      "genre" : "Moba"
+      "genre" : "MOBA"
     },
     {
       "id": 4,
@@ -24,6 +24,82 @@
       "id": 5,
       "title": "Final Fantasy 8",
       "genre" : "JRPG"
+    },
+    {
+      "id": 6,
+      "title": "DOTA",
+      "genre" : "MOBA"
+    },
+    {
+      "id": 7,
+      "title": "Heroes of the Storm",
+      "genre" : "Action, MOBA"
+    },
+    {
+      "id": 8,
+      "title": "The Elder Scrolls Online",
+      "genre" : "RPG"
+    },
+    {
+      "id": 9,
+      "title": "LOST ARC",
+      "genre" : "RPG"
+    },
+    {
+      "id": 10,
+      "title": "Valorant",
+      "genre" : "Action"
+    },
+    {
+      "id": 11,
+      "title": "SMITE",
+      "genre" : "MOBA"
+    },
+    {
+      "id": 12,
+      "title": "STAR WARS: The Old Republic",
+      "genre" : "MMORPG"
+    },
+    {
+      "id": 13,
+      "title": "World of Warcraft",
+      "genre" : "MMORPG"
+    },
+    {
+      "id": 14,
+      "title": "Grand Theft Auto V - Online",
+      "genre" : "Action"
+    },
+    {
+      "id": 15,
+      "title": "Euro Truck Simulator 2",
+      "genre" : "Simulator"
+    },
+    {
+      "id": 16,
+      "title": "Minecraft",
+      "genre" : "Adventure"
+    },
+    {
+      "id": 17,
+      "title": "Battlefield ",
+      "genre" : "FPS"
+    },
+    {
+      "id": 18,
+      "title": "Playerunknown's Battlegrounds",
+      "genre" : "Battle Royale"
+    },
+    {
+      "id": 19,
+      "title": "Fortnite",
+      "genre" : "Battle Royale"
+    },
+    {
+      "id": 20,
+      "title": "Valheim",
+      "genre" : "Survival"
     }
+
   ]
 }

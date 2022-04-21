@@ -22,7 +22,6 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const jp = require('jsonpath');
     
-
     server.use(helmet())
     server.use(cors(corsOptions || {}))
     server.disable('x-powered-by')
@@ -35,7 +34,7 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     logger.info('Starting server...')
 
     server.get('/', (req, res) => {
-        res.send('Witaj');
+        res.send('<h1>Witaj</h1>');
     })
 
 // FUNCTIONS - START
@@ -60,10 +59,17 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     })
     
     server.get('/user/:id', (req: Request, res: Response) => {
-    const data = dataNames.users;
-    JSON.stringify(data)
-
-    //  found(req, res)
+        let found1: boolean = false;
+        dataNames.users.forEach(element => {
+            if (element.id.toString() === req.params.id) {
+                res.json(element);
+                found1 = true;
+            }
+            
+        })
+        if (!found1) {
+            res.send(' Nie ma użytkowika o takim ID. I am sorry! ')
+        }
     })
 // USERS - END
 
@@ -73,30 +79,34 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     })
 
     server.get('/game/:id',  (req: Request, res: Response) => {
-            dataGames.games.forEach(element => {
-                    if (element.id.toString() === req.params.id) {
-                        res.json(element);
-                    } 
-                   
-            })
+        let found2: boolean = false;
+        dataGames.games.forEach(element => {
+            if (element.id.toString() === req.params.id) {
+                found2 = true;
+                res.json(element);
+            }
         })
+        if (!found2) {
+            res.send(' Nie ma gierki z takim ID. I am sorry! ')
+        }
+    })
 // USERS - END
 
 // REVIEWS - START
-server.get('/reviews', (req: Request, res: Response) => {
-    res.json(dataReviews);
-})
+    server.get('/reviews', (req: Request, res: Response) => {
+        res.json(dataReviews);
+    })
 
-server.get('/review/:id',  (req: Request, res: Response) => {
-    let found: boolean = false;
-    dataReviews.reviews.forEach(element => {
-            if (element.id.toString() === req.params.id)
-            found = true
-            res.json(element);
-        
+    server.get('/review/:id',  (req: Request, res: Response) => {
+        let found3: boolean = false;
+        dataReviews.reviews.forEach(element => {
+            if (element.id.toString() === req.params.id) {
+                found3 = true
+                res.json(element);
+            }
         })
-        if (!found) {
-            res.send('Nie ma takiego id 404!!!!!!!!')
+        if (!found3) {
+            res.send(' Nie ma oceny o takim ID. I am sorry! ')
         }
     })
 // REVIEWS - END
@@ -105,6 +115,7 @@ server.get('/review/:id',  (req: Request, res: Response) => {
         logger.info(`Server for ${config.name} ready at port ${port}`)
     })
 }
+
 function found() {
     throw new Error('Function not implemented.')
 }
