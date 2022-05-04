@@ -36,7 +36,8 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
 // USERS - START
     server.get('/users', (req: Request, res: Response) => {
-        res.json(dataNames);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataNames));
     })
     
     server.get('/user/:id', (req: Request, res: Response) => {
@@ -56,7 +57,8 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
 // GAMES - START
     server.get('/games', (req: Request, res: Response) => {
-        res.json(dataGames);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataGames));
     })
 
     server.get('/game/:id',  (req: Request, res: Response) => {
@@ -75,7 +77,8 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
 // REVIEWS - START
     server.get('/reviews', (req: Request, res: Response) => {
-        res.json(dataReviews);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataReviews));
     })
 
     server.get('/review/:id',  (req: Request, res: Response) => {
