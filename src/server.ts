@@ -19,9 +19,6 @@ const LIMITER_MAX = 250
 
 export const startServer = ({ port, corsOptions }: TServer) => {
     const server = express()
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const jp = require('jsonpath');
-    
     server.use(helmet())
     server.use(cors(corsOptions || {}))
     server.disable('x-powered-by')
@@ -36,22 +33,6 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     server.get('/', (req, res) => {
         res.send('<h1>Witaj</h1>');
     })
-
-// FUNCTIONS - START
-
-// function found(req: Request, res: Response ) {
-//     let found: boolean = false;
-//     data.forEach(element => {
-//             if (element.id.toString() === req.params.id)
-//             found = true
-//             res.json(element);
-//         })
-//         if (!found) {
-//             res.send('Nie ma takiego id 404!!!!!!!!')
-//         }
-//     }
-
-// FUNCTIONS - END
 
 // USERS - START
     server.get('/users', (req: Request, res: Response) => {
