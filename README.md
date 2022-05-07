@@ -22,19 +22,10 @@ npm i -D husky lint-staged
 
 -> Or you can just install all dependencies by:
 
-
-npm install
-
-
-npm run dev
+To install dependencies and packages use:
+npm install (remember to use it in folders src and client)
 
 
-
-
-To run app use this commands:
-
-npm run build
-
-npm run start
+To run Client and Server use this commands:
 
 npm run dev

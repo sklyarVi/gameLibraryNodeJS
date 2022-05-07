@@ -19,9 +19,6 @@ const LIMITER_MAX = 250
 
 export const startServer = ({ port, corsOptions }: TServer) => {
     const server = express()
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const jp = require('jsonpath');
-    
     server.use(helmet())
     server.use(cors(corsOptions || {}))
     server.disable('x-powered-by')
@@ -37,25 +34,10 @@ export const startServer = ({ port, corsOptions }: TServer) => {
         res.send('<h1>Witaj</h1>');
     })
 
-// FUNCTIONS - START
-
-// function found(req: Request, res: Response ) {
-//     let found: boolean = false;
-//     data.forEach(element => {
-//             if (element.id.toString() === req.params.id)
-//             found = true
-//             res.json(element);
-//         })
-//         if (!found) {
-//             res.send('Nie ma takiego id 404!!!!!!!!')
-//         }
-//     }
-
-// FUNCTIONS - END
-
 // USERS - START
     server.get('/users', (req: Request, res: Response) => {
-        res.json(dataNames);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataNames));
     })
     
     server.get('/user/:id', (req: Request, res: Response) => {
@@ -75,7 +57,8 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
 // GAMES - START
     server.get('/games', (req: Request, res: Response) => {
-        res.json(dataGames);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataGames));
     })
 
     server.get('/game/:id',  (req: Request, res: Response) => {
@@ -94,7 +77,8 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
 // REVIEWS - START
     server.get('/reviews', (req: Request, res: Response) => {
-        res.json(dataReviews);
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(dataReviews));
     })
 
     server.get('/review/:id',  (req: Request, res: Response) => {
