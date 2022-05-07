@@ -1,105 +1,144 @@
 {
-  "games": [
-    {
-      "id": 1,
-      "title": "Counter-Strike Global Offensive",
-      "genre" : "Action"
-    },
-    {
-      "id": 2,
-      "title": "Diablo",
-      "genre" : "RPG"
-    },
-    {
-      "id": 3,
-      "title": "League of Legends",
-      "genre" : "MOBA"
-    },
-    {
-      "id": 4,
-      "title": "Tom Clancy Rainbow's six",
-      "genre" : "Action"
-    },
-    {
-      "id": 5,
-      "title": "Final Fantasy 8",
-      "genre" : "JRPG"
-    },
-    {
-      "id": 6,
-      "title": "DOTA",
-      "genre" : "MOBA"
-    },
-    {
-      "id": 7,
-      "title": "Heroes of the Storm",
-      "genre" : "Action, MOBA"
-    },
-    {
-      "id": 8,
-      "title": "The Elder Scrolls Online",
-      "genre" : "RPG"
-    },
-    {
-      "id": 9,
-      "title": "LOST ARC",
-      "genre" : "RPG"
-    },
-    {
-      "id": 10,
-      "title": "Valorant",
-      "genre" : "Action"
-    },
-    {
-      "id": 11,
-      "title": "SMITE",
-      "genre" : "MOBA"
-    },
-    {
-      "id": 12,
-      "title": "STAR WARS: The Old Republic",
-      "genre" : "MMORPG"
-    },
-    {
-      "id": 13,
-      "title": "World of Warcraft",
-      "genre" : "MMORPG"
-    },
-    {
-      "id": 14,
-      "title": "Grand Theft Auto V - Online",
-      "genre" : "Action"
-    },
-    {
-      "id": 15,
-      "title": "Euro Truck Simulator 2",
-      "genre" : "Simulator"
-    },
-    {
-      "id": 16,
-      "title": "Minecraft",
-      "genre" : "Adventure"
-    },
-    {
-      "id": 17,
-      "title": "Battlefield ",
-      "genre" : "FPS"
-    },
-    {
-      "id": 18,
-      "title": "Playerunknown's Battlegrounds",
-      "genre" : "Battle Royale"
-    },
-    {
-      "id": 19,
-      "title": "Fortnite",
-      "genre" : "Battle Royale"
-    },
-    {
-      "id": 20,
-      "title": "Valheim",
-      "genre" : "Survival"
-    }
-
-  ]
+    "games": [
+        {
+            "id": 1,
+            "title": "Counter-Strike Global Offensive",
+            "genre": "Action",
+            "released": 2012,
+            "ranking": 4
+        },
+        {
+            "id": 2,
+            "title": "Diablo 3",
+            "genre": "RPG",
+            "released": 2012,
+            "ranking": 5
+        },
+        {
+            "id": 3,
+            "title": "League of Legends",
+            "genre": "MOBA",
+            "released": 2009,
+            "ranking": 5
+        },
+        {
+            "id": 4,
+            "title": "Tom Clancy Rainbow's six",
+            "genre": "Action",
+            "released": 2017,
+            "ranking": 4
+        },
+        {
+            "id": 5,
+            "title": "Final Fantasy 8",
+            "genre": "RPG",
+            "released": 1999,
+            "ranking": 2
+        },
+        {
+            "id": 6,
+            "title": "DOTA 2",
+            "genre": "MOBA",
+            "released": 2013,
+            "ranking": 4
+        },
+        {
+            "id": 7,
+            "title": "Heroes of the Storm",
+            "genre": "Action, MOBA",
+            "released": 2015,
+            "ranking": 2
+        },
+        {
+            "id": 8,
+            "title": "The Elder Scrolls Online",
+            "genre": "RPG",
+            "released": 2014,
+            "ranking": 5
+        },
+        {
+            "id": 9,
+            "title": "LOST ARC",
+            "genre": "RPG",
+            "released": 2019,
+            "ranking": 4
+        },
+        {
+            "id": 10,
+            "title": "Valorant",
+            "genre": "Action",
+            "released": 2020,
+            "ranking": 4
+        },
+        {
+            "id": 11,
+            "title": "SMITE",
+            "genre": "MOBA",
+            "released": 2014,
+            "ranking": 3
+        },
+        {
+            "id": 12,
+            "title": "STAR WARS: The Old Republic",
+            "genre": "MMORPG",
+            "released": 2011,
+            "ranking": 3
+        },
+        {
+            "id": 13,
+            "title": "World of Warcraft",
+            "genre": "MMORPG",
+            "released": 2004,
+            "ranking": 5
+        },
+        {
+            "id": 14,
+            "title": "Grand Theft Auto V - Online",
+            "genre": "Action",
+            "released": 2013,
+            "ranking": 4
+        },
+        {
+            "id": 15,
+            "title": "Euro Truck Simulator 2",
+            "genre": "Simulator",
+            "released": 2012,
+            "ranking": 4
+        },
+        {
+            "id": 16,
+            "title": "Minecraft",
+            "genre": "Adventure",
+            "released": 2011,
+            "ranking": 5
+        },
+        {
+            "id": 17,
+            "title": "Battlefield",
+            "genre": "FPS",
+            "released": 2021,
+            "ranking": 4
+        },
+        {
+            "id": 18,
+            "title": "Playerunknown's Battlegrounds",
+            "genre": "Battle Royale",
+            "released": 2016,
+            "ranking": 3
+        },
+        {
+            "id": 19,
+            "title": "Fortnite",
+            "genre": "Battle Royale",
+            "released": 2017,
+            "ranking": 4
+        },
+        {
+            "id": 20,
+            "title": "Valheim",
+            "genre": "Survival",
+            "released": 2021,
+            "ranking": 5
+        }
+    ]
 }

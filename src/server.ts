@@ -1,4 +1,4 @@
-import express , {json, Request, Response} from 'express'
+import express, { json, Request, Response } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import limit from 'express-rate-limit'
@@ -31,76 +31,70 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     logger.info('Starting server...')
 
     server.get('/', (req, res) => {
-        res.send('<h1>Witaj</h1>');
+        res.send('<h1>Welcome to our Game Library</h1>')
     })
 
-// USERS - START
+    // USERS - START
     server.get('/users', (req: Request, res: Response) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(dataNames));
+        res.setHeader('Content-Type', 'application/json')
+        res.send(JSON.stringify(dataNames))
     })
-    
+
     server.get('/user/:id', (req: Request, res: Response) => {
-        let found1: boolean = false;
-        dataNames.users.forEach(element => {
+        let found = false
+        dataNames.users.forEach((element) => {
             if (element.id.toString() === req.params.id) {
-                res.json(element);
-                found1 = true;
+                res.json(element)
+                found = true
             }
-            
         })
-        if (!found1) {
-            res.send(' Nie ma użytkowika o takim ID. I am sorry! ')
+        if (!found) {
+            res.send('Provided user id is invalid!')
         }
     })
-// USERS - END
+    // USERS - END
 
-// GAMES - START
+    // GAMES - START
     server.get('/games', (req: Request, res: Response) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(dataGames));
+        res.setHeader('Content-Type', 'application/json')
+        res.send(JSON.stringify(dataGames))
     })
 
-    server.get('/game/:id',  (req: Request, res: Response) => {
-        let found2: boolean = false;
-        dataGames.games.forEach(element => {
+    server.get('/game/:id', (req: Request, res: Response) => {
+        let found = false
+        dataGames.games.forEach((element) => {
             if (element.id.toString() === req.params.id) {
-                found2 = true;
-                res.json(element);
+                found = true
+                res.json(element)
             }
         })
-        if (!found2) {
-            res.send(' Nie ma gierki z takim ID. I am sorry! ')
+        if (!found) {
+            res.send('Provided game id is invalid!')
         }
     })
-// USERS - END
+    // GAMES - END
 
-// REVIEWS - START
+    // REVIEWS - START
     server.get('/reviews', (req: Request, res: Response) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(dataReviews));
+        res.setHeader('Content-Type', 'application/json')
+        res.send(JSON.stringify(dataReviews))
     })
 
-    server.get('/review/:id',  (req: Request, res: Response) => {
-        let found3: boolean = false;
-        dataReviews.reviews.forEach(element => {
+    server.get('/review/:id', (req: Request, res: Response) => {
+        let found = false
+        dataReviews.reviews.forEach((element) => {
             if (element.id.toString() === req.params.id) {
-                found3 = true
-                res.json(element);
+                found = true
+                res.json(element)
             }
         })
-        if (!found3) {
-            res.send(' Nie ma oceny o takim ID. I am sorry! ')
+        if (!found) {
+            res.send('Provided review id is invalid!')
         }
     })
-// REVIEWS - END
+    // REVIEWS - END
 
     server.listen(port, () => {
         logger.info(`Server for ${config.name} ready at port ${port}`)
     })
 }
-
-function found() {
-    throw new Error('Function not implemented.')
-}
-
