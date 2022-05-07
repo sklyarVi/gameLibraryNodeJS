@@ -1,34 +1,32 @@
 {
-  "users": [
-    {
-    "id": 1,
-    "username": "Test",
-    "age": 22,
-    "name" : "John"
-    },
-    {
-      "id": 2,
-      "username": "Test2",
-      "age": 18,
-      "name" : "Angela"
-    },
-    {
-      "id": 3,
-      "username": "Test3",
-      "age": 25,
-      "name" : "Hero"
-    },
-    {
-      "id": 4,
-      "username": "Test4",
-      "age": 30,
-      "name" : "Abraham"
-    },
-    {
-      "id": 5,
-      "username": "Test5",
-      "age": 32,
-      "name" : "Tomek"
-    }
-  ]
+    "users": [
+        {
+            "id": 1,
+            "nickname": "Hellscream",
+            "name": "John",
+            "last name": "Black",
+            "age": 32
+        },
+        {
+            "id": 2,
+            "nickname": "Windrunner",
+            "name": "Kate",
+            "last name": "Smith",
+            "age": 28
+        },
+        {
+            "id": 3,
+            "nickname": "Malfurion",
+            "name": "Eddie",
+            "last name": "Havoc",
+            "age": 27
+        },
+        {
+            "id": 4,
+            "nickname": "Illidan",
+            "name": "Malcolm",
+            "last name": "Green",
+            "age": 23
+        }
+    ]
 }
