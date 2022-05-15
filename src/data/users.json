@@ -5,6 +5,8 @@
             "nickname": "Hellscream",
             "name": "John",
             "last name": "Black",
+            "password": "password01",
+            "is admin": true,
             "age": 32
         },
         {
@@ -12,6 +14,8 @@
             "nickname": "Windrunner",
             "name": "Kate",
             "last name": "Smith",
+            "password": "password02",
+            "is admin": false,
             "age": 28
         },
         {
@@ -19,6 +23,8 @@
             "nickname": "Malfurion",
             "name": "Eddie",
             "last name": "Havoc",
+            "password": "password03",
+            "is admin": false,
             "age": 27
         },
         {
@@ -26,6 +32,8 @@
             "nickname": "Illidan",
             "name": "Malcolm",
             "last name": "Green",
+            "password": "password04",
+            "is admin": false,
             "age": 23
         }
     ]
