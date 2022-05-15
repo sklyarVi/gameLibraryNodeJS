@@ -1,0 +1,16 @@
+
+ul.lista {
+    padding-left: 40px;
+}
+ul.lista > li {
+   margin: 20px;
+   list-style-type: circle;
+}
+
+.contactH2{
+    color: red;
+}
+
+.games, .users {
+    padding: 30px;
+}

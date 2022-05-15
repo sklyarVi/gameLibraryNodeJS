@@ -4,28 +4,28 @@
             "id": 1,
             "nickname": "Hellscream",
             "name": "John",
-            "last name": "Black",
+            "last_name": "Black",
             "age": 32
         },
         {
             "id": 2,
             "nickname": "Windrunner",
             "name": "Kate",
-            "last name": "Smith",
+            "last_name": "Smith",
             "age": 28
         },
         {
             "id": 3,
             "nickname": "Malfurion",
             "name": "Eddie",
-            "last name": "Havoc",
+            "last_name": "Havoc",
             "age": 27
         },
         {
             "id": 4,
             "nickname": "Illidan",
             "name": "Malcolm",
-            "last name": "Green",
+            "last_name": "Green",
             "age": 23
         }
     ]

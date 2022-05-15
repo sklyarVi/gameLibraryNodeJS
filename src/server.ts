@@ -31,21 +31,20 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     logger.info('Starting server...')
 
     server.get('/', (req, res) => {
-        res.send('<h1>Welcome to our Game Library</h1>')
+        res.send('<h1> Welcome to our Game Library </h1>')
     })
 
     // USERS - START
     server.get('/users', (req: Request, res: Response) => {
-        res.setHeader('Content-Type', 'application/json')
-        res.send(JSON.stringify(dataNames))
+        res.json(dataNames);
     })
 
     server.get('/user/:id', (req: Request, res: Response) => {
         let found = false
         dataNames.users.forEach((element) => {
             if (element.id.toString() === req.params.id) {
-                res.json(element)
-                found = true
+                res.json(element);
+                found = true;
             }
         })
         if (!found) {
@@ -56,16 +55,15 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
     // GAMES - START
     server.get('/games', (req: Request, res: Response) => {
-        res.setHeader('Content-Type', 'application/json')
-        res.send(JSON.stringify(dataGames))
+        res.json(dataGames);
     })
 
     server.get('/game/:id', (req: Request, res: Response) => {
         let found = false
         dataGames.games.forEach((element) => {
             if (element.id.toString() === req.params.id) {
-                found = true
-                res.json(element)
+                found = true;
+                res.json(element);
             }
         })
         if (!found) {
@@ -76,8 +74,7 @@ export const startServer = ({ port, corsOptions }: TServer) => {
 
     // REVIEWS - START
     server.get('/reviews', (req: Request, res: Response) => {
-        res.setHeader('Content-Type', 'application/json')
-        res.send(JSON.stringify(dataReviews))
+        res.json(dataReviews);
     })
 
     server.get('/review/:id', (req: Request, res: Response) => {
