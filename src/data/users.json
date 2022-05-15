@@ -4,28 +4,36 @@
             "id": 1,
             "nickname": "Hellscream",
             "name": "John",
-            "last_name": "Black",
+            "last name": "Black",
+            "password": "password01",
+            "is admin": true,
             "age": 32
         },
         {
             "id": 2,
             "nickname": "Windrunner",
             "name": "Kate",
-            "last_name": "Smith",
+            "last name": "Smith",
+            "password": "password02",
+            "is admin": false,
             "age": 28
         },
         {
             "id": 3,
             "nickname": "Malfurion",
             "name": "Eddie",
-            "last_name": "Havoc",
+            "last name": "Havoc",
+            "password": "password03",
+            "is admin": false,
             "age": 27
         },
         {
             "id": 4,
             "nickname": "Illidan",
             "name": "Malcolm",
-            "last_name": "Green",
+            "last name": "Green",
+            "password": "password04",
+            "is admin": false,
             "age": 23
         }
     ]
