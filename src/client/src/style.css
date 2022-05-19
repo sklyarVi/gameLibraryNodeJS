@@ -14,3 +14,38 @@ ul.lista > li {
 .games, .users {
     padding: 30px;
 }
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header > div {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    height: 55px;
+}
+
+.link-header {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.link-header > a {
+    display: flex;
+    align-items: center;
+}
+
+.link-header > a > svg {
+    font-size: 54.81px;
+}
+
+.title-header {
+    flex-grow: 9;
+}
+
+.title-header > h2 {
+    margin: 0;
+}

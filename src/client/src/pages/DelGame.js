@@ -1,9 +1,11 @@
 import React from "react";
-//import {Table} from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+//import { Table } from 'semantic-ui-react'
 //import { useParams } from 'react-router-dom'
 
 
-class Game extends React.Component {
+class DelGame extends React.Component {
 
     // Constructor 
     constructor(props) {
@@ -16,26 +18,34 @@ class Game extends React.Component {
     };
     
     componentDidMount() {
-        fetch("http://localhost:5555/game/"+this.props.data)
-            .then((res) => res.json())
-            //.then((res) => console.log(res))
-            .then((json) => {
-                this.setState({
-                    items: json,
-                    DataisLoaded: true
-                });
-            })
+        fetch("http://localhost:5555/game/del/"+this.props.data, {
+            method: 'DELETE'
+        })
+        .then((res) => res.json())
+        //.then((res) => console.log(res))
+        .then((json) => {
+            this.setState({
+                items: json,
+                DataisLoaded: true
+            });
+        })
     }
 
     render() {
         const { DataisLoaded, items } = this.state; 
+        
         if (!DataisLoaded) return <div> <h1> Pleses wait few time.... </h1> </div> ;
 
         return (
-            
-
             <div className = "games">
-                <h2> Game from an API: </h2>
+                <div className="header"> 
+                    <div className="link-header">
+                        <Link to={`/games`} > <ArrowBackRoundedIcon color="primary" /> </Link>
+                    </div>
+                    <div className="title-header">
+                        <h2> This game has been removed: </h2>
+                    </div>
+                </div>
                 <table>
                     <tbody>
                         <tr>
@@ -54,9 +64,10 @@ class Game extends React.Component {
                         </tr>
                     </tbody>
                 </table>
+                
             </div>
         ) ;
     }
 }
    
-export default Game;
+export default DelGame;

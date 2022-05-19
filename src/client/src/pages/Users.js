@@ -1,10 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-//import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-//import Game from './Game'
-//import {Table} from 'semantic-ui-react';
-//import { Route } from "react-router-dom";
-
 
 class Users extends React.Component {
     
@@ -34,7 +28,7 @@ class Users extends React.Component {
 
         let arrUser = items.users;
         //liste.sort();
-        //arrGame.sort( (a,b) => a.ranking - b.ranking)
+        //arrUser.sort( (a,b) => a.ranking - b.ranking)
 
         console.log( arrUser );
 
