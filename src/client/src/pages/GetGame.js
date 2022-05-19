@@ -31,6 +31,8 @@ class GetGames extends React.Component {
 
         return (
         <div className = "games">
+
+
             <h2> Games from an API: </h2>
             <table>
                 <tbody>
@@ -44,5 +46,6 @@ class GetGames extends React.Component {
 export default GetGames;
 
 //<Game data={item.id}/>
-
+            // <i className='material-icons-outlined ico'>restart_alt</i>
+            // <i className='material-icons'>cloud</i>
 //Hejka, będę miał pytanko do projektu, mogli byśmy się umówić o której tam będzie Ci pasować? Wolałbym Ci wytłumaczyć niż pisać ;P
