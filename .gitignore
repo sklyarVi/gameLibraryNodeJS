@@ -2,3 +2,5 @@
 /build
 .env
 /logs
+package.json
+package-lock.json
