@@ -36,7 +36,13 @@ class GetGames extends React.Component {
             <h2> Games from an API: </h2>
             <table>
                 <tbody>
-                    <ListGame data = {items} pC = {this.props.getData} del = {this.props.getData}  />
+                    <ListGame
+                        data = {items} 
+                        pC = {this.props.getData}
+                        del = {this.props.getData} 
+                        edit = {this.props.getData} 
+                        put = {this.props.getData}
+                    />
                 </tbody>
             </table>
         </div>
