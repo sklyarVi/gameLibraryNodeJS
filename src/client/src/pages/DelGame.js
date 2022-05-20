@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 //import { Table } from 'semantic-ui-react'
 //import { useParams } from 'react-router-dom'
 
-
 class DelGame extends React.Component {
 
     // Constructor 

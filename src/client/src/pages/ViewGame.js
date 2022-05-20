@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-//import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 //import {Table} from 'semantic-ui-react'
 //import { useParams } from 'react-router-dom'
-
 
 class ViewGame extends React.Component {
 

@@ -19,17 +19,6 @@ function App() {
   function getName(id) {
     setData(id);
   };
-  
-  // useEffect ( () => {
-  //   const materialIcon = document.createElement("link");
-  //   const herF = "https://fonts.googleapis.com/css2?family=Material+Icons";
-  //   const reL="stylesheet";
-
-  //   materialIcon.setAttribute("herf", herF);
-  //   materialIcon.setAttribute("rel", reL);
-
-  //   document.head.appendChild(materialIcon);
-  // } );
 
   return (
     <BrowserRouter>

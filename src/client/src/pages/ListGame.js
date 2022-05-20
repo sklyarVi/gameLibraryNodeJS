@@ -121,7 +121,6 @@ function ListGame( props ) {
                         <i className='material-icons-outlined'>delete_outline</i>
                     </button>
                 </Link>
-
             </td>   
         </tr>
     ))
