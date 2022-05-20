@@ -11,6 +11,7 @@ import ViewGame from "./pages/ViewGame";
 import GetGame from "./pages/GetGame";
 import DelGame from "./pages/DelGame";
 import UpdateGame from './pages/UpdateGame';
+import AddGame from './pages/AddGame';
 //import 'material-design-icons/iconfont/material-icons.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="games" element={<GetGame getData={getName}/>} />
           <Route path="/game/:id" element={<ViewGame data={data}/>} />
           <Route path="/game/update/:id" element={<UpdateGame data={data}/>} />
+          <Route path="/game/add" element={<AddGame/>} />
           <Route path="/game/del/:id" element={<DelGame data={data}/>} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />

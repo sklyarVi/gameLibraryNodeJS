@@ -111,7 +111,7 @@ function ListGame( props ) {
                         <i className='material-icons-outlined'>edit</i>
                     </button>
                 </Link>
-                <Link to={`/game/put/${item.id}`}>
+                <Link to={`/game/add`}>
                     <button className='waves-effect waves-light btn-floating btn-large btn yellow darken-2' onClick = { () => props.del(item.id) }>  
                         <i className='material-icons-outlined'>add</i>
                     </button>
