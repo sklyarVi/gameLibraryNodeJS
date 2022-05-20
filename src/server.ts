@@ -5,9 +5,7 @@ import limit from 'express-rate-limit'
 import dataNames from 'src/data/users.json'
 import dataGames from 'src/data/games.json'
 import dataReviews from 'src/data/reviews.json'
-
 // import dataRegister from 'data/register.json'
-
 import { logger } from 'src/logger'
 import { TServer } from 'src/types/server.types'
 import config from 'src/config'

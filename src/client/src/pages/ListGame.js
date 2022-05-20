@@ -102,16 +102,25 @@ function ListGame( props ) {
             <td> { item.ranking } </td>
             <td> 
                 <Link to={`/game/${item.id}`}>
-                    <button onClick = { () => props.pC(item.id) }>  
-                        Explore 
+                    <button className='waves-effect waves-light btn-floating btn-large btn green' onClick = { () => props.pC(item.id) }>  
+                        <i className='material-icons'>preview</i> 
                     </button>
                 </Link>
                 <Link to={`/game/del/${item.id}`}>
-                <button onClick = { () => props.del(item.id) }>  
-                    Delete 
-                </button>
+                    <button className='waves-effect waves-light btn-floating btn-large btn light-blue darken-1' onClick = { () => props.del(item.id) }>  
+                        <i className='material-icons-outlined'>edit</i>
+                    </button>
                 </Link>
-
+                <Link to={`/game/del/${item.id}`}>
+                    <button className='waves-effect waves-light btn-floating btn-large btn yellow darken-2' onClick = { () => props.del(item.id) }>  
+                        <i className='material-icons-outlined'>add</i>
+                    </button>
+                </Link>
+                <Link to={`/game/del/${item.id}`}>
+                    <button className='waves-effect waves-light btn-floating btn-large btn red' onClick = { () => props.del(item.id) }>  
+                        <i className='material-icons-outlined'>delete_outline</i>
+                    </button>
+                </Link>
             </td>   
         </tr>
     ))
@@ -119,11 +128,23 @@ function ListGame( props ) {
     return (
         <>
             <tr>
-                <th> <button id='btn1' onClick = { () => handleSort(0) }> Title Sort </button>    </th> 
-                <th> <button id='btn2' onClick = { () => handleSort(1) }> Genre Sort </button>    </th>
-                <th> <button id='btn3' onClick = { () => handleSort(2) }> Released Sort </button> </th>
-                <th> <button id='btn4' onClick = { () => handleSort(3) }> Ranking Sort </button>  </th>
-                <th> <button onClick = { () => handleSort(4) }> Reset </button> </th>
+                <th> <button className='waves-effect waves-light btn' id='btn1' onClick = { () => handleSort(0) }> 
+                    <i className='material-icons-outlined left'> sort </i> Sort 
+                </button> </th> 
+                <th> <button className='waves-effect waves-light btn' id='btn2' onClick = { () => handleSort(1) }> 
+                    <i className='material-icons-outlined left'> sort </i> Sort 
+                </button>    </th>
+                <th> <button className='waves-effect waves-light btn' id='btn3' onClick = { () => handleSort(2) }> 
+                    <i className='material-icons-outlined left'> sort </i> Sort 
+                </button> </th>
+                <th> <button className='waves-effect waves-light btn' id='btn4' onClick = { () => handleSort(3) }> 
+                    <i className='material-icons-outlined left'> sort </i> Sort 
+                </button>  </th>
+                <th> 
+                    <button className='waves-effect waves-light btn' onClick = { () => handleSort(4) }> 
+                        <i className='material-icons-outlined ico'>restart_alt</i>
+                    </button>
+                </th>
             </tr>
             <tr>
                 <th> Title </th> 

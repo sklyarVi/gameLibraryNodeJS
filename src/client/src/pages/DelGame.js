@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 //import { Table } from 'semantic-ui-react'
 //import { useParams } from 'react-router-dom'
-
 
 class DelGame extends React.Component {
 
@@ -40,10 +38,10 @@ class DelGame extends React.Component {
             <div className = "games">
                 <div className="header"> 
                     <div className="link-header">
-                        <Link to={`/games`} > <ArrowBackRoundedIcon color="primary" /> </Link>
+                        <Link to={`/games`} > <i className='material-icons-outlined left'> arrow_back </i> Back To Games </Link>
                     </div>
                     <div className="title-header">
-                        <h2> This game has been removed: </h2>
+                        <h2>  This game has been removed: </h2>
                     </div>
                 </div>
                 <table>

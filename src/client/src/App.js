@@ -10,6 +10,7 @@ import NoPage from "./pages/NoPage";
 import ViewGame from "./pages/ViewGame";
 import GetGame from "./pages/GetGame";
 import DelGame from "./pages/DelGame";
+//import 'material-design-icons/iconfont/material-icons.css';
 
 function App() {
 
@@ -18,17 +19,6 @@ function App() {
   function getName(id) {
     setData(id);
   };
-  
-  // useEffect ( () => {
-  //   const materialIcon = document.createElement("link");
-  //   const herF = "https://fonts.googleapis.com/icon?family=Material+Icons";
-  //   const reL="stylesheet";
-
-  //   materialIcon.setAttribute("herf", herF);
-  //   materialIcon.setAttribute("rel", reL);
-
-  //   document.head.appendChild(materialIcon);
-  // } );
 
   return (
     <BrowserRouter>
