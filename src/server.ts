@@ -11,6 +11,7 @@ import { TServer } from 'src/types/server.types'
 import config from 'src/config'
 import { parse } from 'dotenv'
 import { List, String, toInteger } from 'lodash'
+import e from 'cors'
 
 const LIMITER_TIME = 15 * 60 * 1000
 const LIMITER_MAX = 250
@@ -53,53 +54,43 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     // USERS - END
 
     // GAMES - START
-        // (READ) GET
+    // (READ) GET
+        //GET ALL
     server.get('/games', (req: Request, res: Response) => {
         // res.setHeader('Content-Type', 'application/json')
         // res.send(JSON.stringify(dataGames))
         res.json(dataGames.games);
     })
-
+        //GET ONE
     server.get('/game/:id', (req: Request, res: Response) => {
         let found = false;
         dataGames.games.forEach((element) => {
-        if (element.id.toString() === req.params.id) {
-            found = true;
-            res.json(element);
-        }}
+            if (element.id.toString() === req.params.id) {
+                found = true;
+                res.json(element);
+            }}
         );
 
         if (!found) {
             res.send('Provided game id is invalid!');
         }
     })
-        // EnD --> (READ) GET 
+    // EnD --> (READ) GET 
 
     // (CREATE) PUT/POST
-    server.post('/game/put/:id', (req: Request, res: Response) => {
+    server.post('/game/post', (req: Request, res: Response) => {
         const gameAdd = req.body;
-        const { id } = req.params;
-        gameAdd.id = parseInt(id);
-        let found = false;
-        let itIs = 0;
+        let filtres = dataGames.games.filter( game => game.id == gameAdd.id );
 
-        dataGames.games.forEach( (element) => {
-            if (element.id.toString() === id) {
-                itIs = 1; 
-            }}
-        );
-
-        if ( !itIs ) {
-            found = true;
+        if ( filtres.length == 1 ) { 
+            console.log("xD");
+            res.send('Provided game ID is occupied!');
+        } 
+        else if ( filtres.length == 0 ) {
             dataGames.games.push(gameAdd);
             res.json(gameAdd);
             console.log(gameAdd);
         }
-
-        if ( !found ) {
-            res.send('Provided game ID is occupied!');
-        }
-        // res.json(gameAdd);
     })
     // EnD --> (CREATE) PUT/POST
 
@@ -121,8 +112,24 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     })
     // EnD --> (DELETE) DEL
 
-    // UPDATE (POST)
-    
+    // UPDATE (PUT)   
+    server.put('/game/update/:id', (req: Request, res: Response) => {
+        const gameUpdate = req.body;
+        const { id } = req.params;
+        const myID = parseInt(id);
+        gameUpdate.id = parseInt(id);
+
+        let index = dataGames.games.findIndex( item => item.id === myID );
+        console.log( id , index);
+
+        if ( index == undefined || index <= -1 ) {
+            res.send('Provided game ID is occupied!');
+        } else {
+            console.log( dataGames.games[index] );
+            dataGames.games[index] = gameUpdate;
+            console.log( dataGames.games[index] );
+        }
+    }) 
     // EnD --> UPDATE (POST)
     // GAMES - END
 

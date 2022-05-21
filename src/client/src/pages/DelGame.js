@@ -38,7 +38,7 @@ class DelGame extends React.Component {
             <div className = "games">
                 <div className="header"> 
                     <div className="link-header">
-                        <Link to={`/games`} > <i className='material-icons-outlined left'> arrow_back </i> Back To Games </Link>
+                        <Link to={`/games`} > <i className='material-icons-outlined large left'> arrow_back </i> Back To Games </Link>
                     </div>
                     <div className="title-header">
                         <h2>  This game has been removed: </h2>

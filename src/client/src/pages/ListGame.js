@@ -106,12 +106,12 @@ function ListGame( props ) {
                         <i className='material-icons'>preview</i> 
                     </button>
                 </Link>
-                <Link to={`/game/del/${item.id}`}>
-                    <button className='waves-effect waves-light btn-floating btn-large btn light-blue darken-1' onClick = { () => props.del(item.id) }>  
+                <Link to={`/game/update/${item.id}`}>
+                    <button className='waves-effect waves-light btn-floating btn-large btn light-blue darken-1' onClick = { () => props.edit(item.id) }>  
                         <i className='material-icons-outlined'>edit</i>
                     </button>
                 </Link>
-                <Link to={`/game/del/${item.id}`}>
+                <Link to={`/game/add`}>
                     <button className='waves-effect waves-light btn-floating btn-large btn yellow darken-2' onClick = { () => props.del(item.id) }>  
                         <i className='material-icons-outlined'>add</i>
                     </button>
@@ -142,7 +142,7 @@ function ListGame( props ) {
                 </button>  </th>
                 <th> 
                     <button className='waves-effect waves-light btn' onClick = { () => handleSort(4) }> 
-                        <i className='material-icons-outlined ico'>restart_alt</i>
+                        <i className='material-icons-outlined left'>restart_alt</i> Reset
                     </button>
                 </th>
             </tr>
