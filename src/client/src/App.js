@@ -12,32 +12,57 @@ import GetGame from "./pages/GetGame";
 import DelGame from "./pages/DelGame";
 import UpdateGame from './pages/UpdateGame';
 import AddGame from './pages/AddGame';
+import Footer from './pages/Footer';
+import Login from './pages/Login'
 //import 'material-design-icons/iconfont/material-icons.css';
 
-function App() {
+function setToken(userToken) {
 
+}
+function getToken() {
+
+}
+
+function App() {
+  const token = getToken();
+  // if(!token) {
+  //   return (
+  //       <BrowserRouter>
+  //         <div className='center'>
+  //           <Layout/>
+  //           <Login setToken={setToken} />
+  //           <Footer />
+  //         </div>
+  //       </BrowserRouter>
+  //   );
+  //
+  // }
   const [ data, setData ] = useState(null);
-  
   function getName(id) {
     setData(id);
-  };
-
+  }
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="users" element={<Users />} />
-          <Route path="games" element={<GetGame getData={getName}/>} />
-          <Route path="/game/:id" element={<ViewGame data={data}/>} />
-          <Route path="/game/update/:id" element={<UpdateGame data={data}/>} />
-          <Route path="/game/add" element={<AddGame/>} />
-          <Route path="/game/del/:id" element={<DelGame data={data}/>} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      <div className='center'>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={ <Home />} />
+              <Route path="login" element={<Login/>}/>
+              <Route path="users" element={<Users />} />
+              <Route path="games" element={<GetGame getData={getName}/>} />
+              <Route path="/game/:id" element={<ViewGame data={data}/>} />
+              <Route path="/game/update/:id" element={<UpdateGame data={data}/>} />
+              <Route path="/game/add" element={<AddGame/>} />
+              <Route path="/game/del/:id" element={<DelGame data={data}/>} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+        <Footer/>
+      </div>
   );
+  console.log(token)
 }
+
 export default App;
