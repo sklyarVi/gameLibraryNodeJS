@@ -3,37 +3,37 @@
         {
             "id": 1,
             "nickname": "Hellscream",
-            "name": "John",
-            "last name": "Black",
+            "firstName": "John",
+            "lastName": "Black",
             "password": "password01",
-            "is admin": true,
+            "isAdmin": true,
             "age": 32
         },
         {
             "id": 2,
             "nickname": "Windrunner",
-            "name": "Kate",
-            "last name": "Smith",
+            "firstName": "Kate",
+            "lastName": "Smith",
             "password": "password02",
-            "is admin": false,
+            "isAdmin": false,
             "age": 28
         },
         {
             "id": 3,
             "nickname": "Malfurion",
-            "name": "Eddie",
-            "last name": "Havoc",
+            "firstName": "Eddie",
+            "lastName": "Havoc",
             "password": "password03",
-            "is admin": false,
+            "isAdmin": false,
             "age": 27
         },
         {
             "id": 4,
             "nickname": "Illidan",
-            "name": "Malcolm",
-            "last name": "Green",
+            "firstName": "Malcolm",
+            "lastName": "Green",
             "password": "password04",
-            "is admin": false,
+            "isAdmin": false,
             "age": 23
         }
     ]

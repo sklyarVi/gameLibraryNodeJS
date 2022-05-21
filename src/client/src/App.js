@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
 import 'materialize-css';
 import './style.css';
 import Layout from "./pages/Layout";
@@ -16,27 +16,7 @@ import Footer from './pages/Footer';
 import Login from './pages/Login'
 //import 'material-design-icons/iconfont/material-icons.css';
 
-function setToken(userToken) {
-
-}
-function getToken() {
-
-}
-
 function App() {
-  const token = getToken();
-  // if(!token) {
-  //   return (
-  //       <BrowserRouter>
-  //         <div className='center'>
-  //           <Layout/>
-  //           <Login setToken={setToken} />
-  //           <Footer />
-  //         </div>
-  //       </BrowserRouter>
-  //   );
-  //
-  // }
   const [ data, setData ] = useState(null);
   function getName(id) {
     setData(id);
@@ -62,7 +42,7 @@ function App() {
         <Footer/>
       </div>
   );
-  console.log(token)
+
 }
 
 export default App;
