@@ -108,7 +108,6 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     // END --> UPDATE (POST)
 // USER - END
 
-
 // GAMES - START
     // (READ) GET
     //GET ALL
