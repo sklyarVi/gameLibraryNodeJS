@@ -2,12 +2,13 @@ import express, { json, Request, Response } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import limit from 'express-rate-limit'
-import dataNames from 'src/data/users.json'
+
 import dataGames from 'src/data/games.json'
 import dataReviews from 'src/data/reviews.json'
 import { logger } from 'src/logger'
 import { TServer } from 'src/types/server.types'
 import config from 'src/config'
+import {loginUser, readUser, redUsers} from "src/routes/users";
 // import dataRegister from 'data/register.json'
 
 const LIMITER_TIME = 15 * 60 * 1000
@@ -31,23 +32,9 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     })
 
     // USERS - START
-    server.get('/users', (req: Request, res: Response) => {
-        res.json(dataNames)
-    })
-
-    server.get('/user/:id', (req: Request, res: Response) => {
-        let found = false
-        dataNames.users.forEach((element) => {
-            if (element.id.toString() === req.params.id) {
-                res.json(element)
-                found = true
-            }
-        })
-
-        if (!found) {
-            res.send('Provided user id is invalid!')
-        }
-    })
+    server.get('/users', redUsers)
+    server.get('/users/login', loginUser)
+    server.get('/user/:id', readUser)
     // USERS - END
 
     // GAMES - START

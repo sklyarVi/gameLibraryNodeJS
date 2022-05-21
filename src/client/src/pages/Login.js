@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
-
+import React from 'react';
 // const [errorMessages, setErrorMessages] = useState({});
 // const [isSubmitted, setIsSubmitted] = useState(false);
 
-// const renderErrorMessage = (name) =>
-//     name === errorMessages.name && (
-//         <div className="error">{errorMessages.message}</div>
+// const renderErrorMessagerrorMessages.name && (
+// //         <div c = (name) =>
+//     name === elassName="error">{errorMessages.message}</div>
 //     );
 const Login = () => {
     return (

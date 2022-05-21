@@ -1,9 +1,35 @@
-import React  from 'react';
-import { Outlet, Link } from "react-router-dom";
+import React, {useEffect}  from 'react';
+import {Outlet, Link, Route, useLocation, useParams} from "react-router-dom";
+
+const ADMIN_PATHS = '/admin'
 
 const Layout = () => {
+    const loc = useLocation();
 
-  return (
+    async function getToken() {
+        const params = new URLSearchParams(window.location.search)
+        const token = params.get('token');
+
+        const result = await fetch("http://localhost:5554/users/login", {
+            headers: {
+                authorization: token
+            }
+        })
+
+        const data = await result.json();
+        const isAdmin = data.isAdmin;
+
+        if(!isAdmin && ADMIN_PATHS.indexOf(loc.pathname) !== -1) {
+            //Redirect - nie ma dostępu
+            //Czesciowy dsotep - useContext hook
+        }
+    }
+
+    useEffect(() => {
+        getToken()
+    })
+
+    return (
       <>
         <nav className='left-align'>
           <div className="nav-wrapper container">
