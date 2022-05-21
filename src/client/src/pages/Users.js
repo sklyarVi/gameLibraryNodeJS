@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 class Users extends React.Component {
-    
-    // Constructor 
+
+    // Constructor
     constructor(props) {
         //console.log(props)
         super(props);
@@ -38,27 +39,41 @@ class Users extends React.Component {
         return (
             <div className = "users">
                 <h2> Users from an API: </h2>
-                <table>
+                <table className='centered'>
                     <tbody>
-                        <tr>
-                            <th> Nickname </th>
-                            <th> Name </th>
-                            <th> Lastname </th>
-                            <th> Age </th>
-                            <th> Actions </th>
-                        </tr>
-                        { arrUser.map((item) => (
+                    <tr>
+                        <th className='center'> Nickname </th>
+                        <th className='center'> Name </th>
+                        <th className='center'> Lastname </th>
+                        <th className='center'> Age </th>
+                        <th className='center'> Actions </th>
+                    </tr>
+                    { arrUser.map((item) => (
                         <tr  key = { item.id }>
                             <td> { item.nickname } </td>
                             <td> { item.name } </td>
                             <td> { item.last_name } </td>
                             <td> { item.age } </td>
-                            <td> 
-                                <button> Edit </button>
-                                <button> Edit </button>
-                            </td>   
+                            <td>
+                                <Link to={`/user/update/${item.id}`}>
+                                    <button
+                                        className="waves-effect waves-light btn-floating btn-small btn light-blue darken-1"
+                                    >
+                                        <i className="material-icons-outlined">edit</i>
+                                    </button>
+                                </Link>
+                                <Link to={`/user/del/${item.id}`}>
+                                    <button
+                                        className="waves-effect waves-light btn-floating btn-small btn red"
+                                    >
+                                        <i className="material-icons-outlined">
+                                            delete_outline
+                                        </i>
+                                    </button>
+                                </Link>
+                            </td>
                         </tr>
-                        )) }
+                    )) }
                     </tbody>
                 </table>
             </div>
@@ -66,10 +81,3 @@ class Users extends React.Component {
     }
 }
 export default Users;
-
-
-// <Link to={`/game/${item.id}`}>
-// <button onClick={ () => this.props.getData(item.id)}>  
-//     Explore 
-// </button>
-// </Link>
