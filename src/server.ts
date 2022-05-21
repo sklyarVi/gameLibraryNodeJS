@@ -53,12 +53,12 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     // (CREATE) PUT/POST
     server.post('/user/post', (req: Request, res: Response) => {
         const userAdd = req.body
-        let filtres = dataNames.users.filter((game) => game.id == userAdd.id)
+        let filtres = dataNames.users.filter((user) => user.id == userAdd.id)
 
         if (filtres.length == 1) {
             res.send('Provided game ID is occupied!')
         } else if (filtres.length == 0) {
-            dataGames.games.push(userAdd)
+            dataNames.users.push(userAdd)
             res.json(userAdd)
             console.log(userAdd)
         }
@@ -98,7 +98,7 @@ export const startServer = ({ port, corsOptions }: TServer) => {
         if (index == undefined || index <= -1) {
             res.send('Provided game ID is occupied!')
         } else {
-            console.log(dataGames.games[index])
+            console.log(dataNames.users[index])
             dataNames.users[index] = userUpdate
             res.json(userUpdate)
         }
