@@ -29,7 +29,7 @@ class ViewGame extends React.Component {
 
     render() {
         const { DataisLoaded, items } = this.state; 
-        
+        console.log(items);
         if (!DataisLoaded) return <div> <h1> Pleses wait few time.... </h1> </div> ;
 
         return (
