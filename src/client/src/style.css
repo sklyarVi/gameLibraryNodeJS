@@ -39,7 +39,7 @@ button {
 }
 
 .link-header {
-    width: 13%;
+    width: 15%;
     text-align: center;
 }
 
@@ -59,4 +59,24 @@ button {
 
 .title-header > h2 {
     margin: 0;
+}
+
+input.valid[type=number]:not(.browser-default).validRed {
+    border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #f44336;
+}
+
+input.valid[type=number]:not(.browser-default).validGreen {
+    border-bottom: 1px solid #4CAF50;
+    box-shadow: 0 1px 0 0 #4caf50;
+}
+
+input.invalid[type=number]:not(.browser-default).validRed {
+    border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #f44336;
+}
+
+input.invalid[type=number]:not(.browser-default).validGreen {
+    border-bottom: 1px solid #4CAF50;
+    box-shadow: 0 1px 0 0 #4caf50;
 }

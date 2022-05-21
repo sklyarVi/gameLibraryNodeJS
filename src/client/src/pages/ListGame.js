@@ -124,7 +124,7 @@ function ListGame(props) {
             <td> {item.genre} </td>
             <td> {item.released} </td>
             <td> {item.ranking} </td>
-            <td>
+            <td className='center'>
                 <Link to={`/game/${item.id}`}>
                     <button
                         className="waves-effect waves-light btn-floating btn-large btn green"
@@ -139,14 +139,6 @@ function ListGame(props) {
                         onClick={() => props.edit(item.id)}
                     >
                         <i className="material-icons-outlined">edit</i>
-                    </button>
-                </Link>
-                <Link to={`/game/add`}>
-                    <button
-                        className="waves-effect waves-light btn-floating btn-large btn yellow darken-2"
-                        onClick={() => props.del(item.id)}
-                    >
-                        <i className="material-icons-outlined">add</i>
                     </button>
                 </Link>
                 <Link to={`/game/del/${item.id}`}>
@@ -210,24 +202,25 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th>
-                    <button
-                        className="waves-effect waves-light btn"
-                        onClick={() => handleSort(4)}
-                    >
-                        <i className="material-icons-outlined left">
-                            restart_alt
-                        </i>{' '}
-                        Reset
+                <th className='center'>
+                    <button className="waves-effect waves-light btn" onClick={() => handleSort(4)} >
+                        <i className="material-icons-outlined left"> restart_alt </i> Reset
                     </button>
+                    <Link to={`/game/add`}>
+                        <button className="waves-effect waves-light btn yellow darken-2" >
+                            <i className="material-icons-outlined left">add</i> Add New Game 
+                        </button>
+                    </Link>
                 </th>
+                
+                
             </tr>
             <tr>
                 <th> Title </th>
                 <th> Genre </th>
                 <th> Released </th>
                 <th> Ranking </th>
-                <th> Actions</th>
+                <th className='center' > Actions </th>
             </tr>
 
             {listComp}
