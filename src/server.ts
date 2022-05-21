@@ -126,6 +126,8 @@ export const startServer = ({ port, corsOptions }: TServer) => {
         } else {
             console.log(dataGames.games[index])
             dataGames.games[index] = gameUpdate
+            res.json(gameUpdate)
+
             console.log(dataGames.games[index])
         }
     })
