@@ -1,107 +1,188 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+//import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 //import {Table} from 'semantic-ui-react'
 //import { useParams } from 'react-router-dom'
 
-class AddGame extends React.Component {
+// export const Component = () => {
+//     const [state, setState] = useState(false)
 
-    // Constructor 
+//     return <div>text</div>
+// }
+
+class AddGame extends React.Component {
+    // Constructor
     constructor(props) {
-        console.log(props.data);
-        super(props);
-    };
+        console.log(props.data)
+        super(props)
+    }
 
     render() {
-        let id, title, genre, released, ranking;
+        let id, title, genre, released, ranking
 
         function updateMyGame() {
-            let zmienna = 0;
-            let item={id, title, genre, released, ranking};
+            let statusUpdate = 0
+            let item = { id, title, genre, released, ranking }
             console.log(item)
 
-            fetch("http://localhost:5555/game/post/", {
-              method: 'POST',
-              headers:{
-                'Accept':'application/json',
-                'Content-Type':'application/json'
-              },
-              body:JSON.stringify(item)
+            fetch('http://localhost:5555/game/post/', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(item),
             })
-            .then((res) => res.json())
-            .then((json) => {
-                console.log(json);
-                zmienna = 1;
-            });
+                .then((res) => res.json())
+                .then((json) => {
+                    console.log(json)
+                    statusUpdate = 1
+                })
 
-            if ( !zmienna ) {
-                document.getElementById("messApi").innerHTML = "Your game has an added!";
+            if (!statusUpdate) {
+                document.getElementById('messApi').innerHTML =
+                    'Your game has been added!'
             }
         }
 
         return (
-            <div className = "games">
-                <div className="header row"> 
+            <div className="games">
+                <div className="header row">
                     <div className="link-header">
-                        <Link to={`/games`} > <i className='material-icons-outlined left'> arrow_back </i> Back To Games </Link>
+                        <Link to={`/games`}>
+                            {' '}
+                            <i className="material-icons-outlined left">
+                                {' '}
+                                arrow_back{' '}
+                            </i>{' '}
+                            Back To Games{' '}
+                        </Link>
                     </div>
                     <div className="title-header">
-                        <h2>  You are updating this game: </h2>
+                        <h2> You are updating this game: </h2>
                     </div>
                 </div>
                 <div className="row">
                     <form className="col s12">
                         <div className="row">
                             <div className="input-field col s12">
-                                <input placeholder="Title" id="title" type="number" className="validate" 
-                                    onChange= { (e) => {id = e.target.value; console.log(e.target.value); } } />
-                                <label htmlFor="title" className="active"> ID </label>
+                                <input
+                                    placeholder="Title"
+                                    id="title"
+                                    type="number"
+                                    required
+                                    className="validate"
+                                    onChange={(e) => {
+                                        id = e.target.value
+                                        console.log(e.target.value)
+                                    }}
+                                />
+                                <label htmlFor="title" className="active">
+                                    {' '}
+                                    ID{' '}
+                                </label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input placeholder="Title" id="title" type="text" className="validate" 
-                                    onChange= { (e) => {title = e.target.value; console.log(e.target.value); } } />
-                                <label htmlFor="title" className="active"> Title </label>
+                                <input
+                                    placeholder="Title"
+                                    id="title"
+                                    type="text"
+                                    required
+                                    className="validate"
+                                    onChange={(e) => {
+                                        title = e.target.value
+                                        console.log(e.target.value)
+                                    }}
+                                />
+                                <label htmlFor="title" className="active">
+                                    {' '}
+                                    Title{' '}
+                                </label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input placeholder="Genre" id="genre" type="text" className="validate" 
-                                    onChange= { (e) => { genre = e.target.value; console.log(e.target.value); } } />
-                                <label htmlFor="genre" className="active"> Genre </label>
+                                <input
+                                    placeholder="Genre"
+                                    id="genre"
+                                    type="text"
+                                    required
+                                    className="validate"
+                                    onChange={(e) => {
+                                        genre = e.target.value
+                                        console.log(e.target.value)
+                                    }}
+                                />
+                                <label htmlFor="genre" className="active">
+                                    {' '}
+                                    Genre{' '}
+                                </label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input placeholder="Released" id="released" type="number" className="validate" 
-                                    onChange= { (e) => { released = e.target.value; console.log(e.target.value); } } />
-                                <label htmlFor="released" className="active" > Released </label>
+                                <input
+                                    placeholder="Released"
+                                    id="released"
+                                    type="number"
+                                    required
+                                    className="validate"
+                                    onChange={(e) => {
+                                        released = e.target.value
+                                        console.log(e.target.value)
+                                    }}
+                                />
+                                <label htmlFor="released" className="active">
+                                    {' '}
+                                    Released{' '}
+                                </label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s12">
-                                <input placeholder="Ranking" id="ranking" type="number" className="validate" 
-                                    onChange= { (e) => { ranking = e.target.value; console.log(e.target.value); } } />
-                                <label htmlFor="ranking" className="active" > Ranking </label>
+                                <input
+                                    placeholder="Ranking"
+                                    id="ranking"
+                                    type="number"
+                                    required
+                                    className="validate"
+                                    onChange={(e) => {
+                                        ranking = e.target.value
+                                        console.log(e.target.value)
+                                    }}
+                                />
+                                <label htmlFor="ranking" className="active">
+                                    {' '}
+                                    Ranking{' '}
+                                </label>
                             </div>
                         </div>
                     </form>
                     <div className="row">
                         <div className="input-field col s12">
-                            <button className='col s4 waves-effect waves-light btn-large btn green right' onClick={updateMyGame}> 
-                                <i className='material-icons-outlined left'>send</i>Submit 
+                            <button
+                                id="submit"
+                                className="col s4 waves-effect waves-light btn-large btn green right"
+                                onClick={updateMyGame}
+                            >
+                                <i className="material-icons-outlined left">
+                                    send
+                                </i>
+                                Submit
                             </button>
                         </div>
-                   </div>
-                   <div className="row">
+                    </div>
+                    <div className="row">
                         <div className="col s12 center green-text">
-                            <h2 id = 'messApi'> </h2>
+                            <h2 id="messApi"> </h2>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
-        ) ;
+        )
     }
 }
-   
-export default AddGame;
+
+export default AddGame
