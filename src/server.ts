@@ -101,8 +101,6 @@ export const startServer = ({ port, corsOptions }: TServer) => {
             console.log(dataGames.games[index])
             dataNames.users[index] = userUpdate
             res.json(userUpdate)
-
-            console.log(dataGames.games[index])
         }
     })
     // END --> UPDATE (POST)
