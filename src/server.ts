@@ -30,7 +30,7 @@ export const startServer = ({ port, corsOptions }: TServer) => {
         res.send('<h1> Welcome to our Game Library </h1>')
     })
 
-    // USERS - START
+// USERS - START
     server.get('/users', (req: Request, res: Response) => {
         res.json(dataNames)
     })
@@ -45,12 +45,68 @@ export const startServer = ({ port, corsOptions }: TServer) => {
         })
 
         if (!found) {
-            res.send('Provided user id is invalid!')
+            res.send('Provided user id is invalid!!')
         }
     })
     // USERS - END
 
-    // GAMES - START
+    // (CREATE) PUT/POST
+    server.post('/user/post', (req: Request, res: Response) => {
+        const userAdd = req.body
+        let filtres = dataNames.users.filter((user) => user.id == userAdd.id)
+
+        if (filtres.length == 1) {
+            res.send('Provided game ID is occupied!')
+        } else if (filtres.length == 0) {
+            dataNames.users.push(userAdd)
+            res.json(userAdd)
+            console.log(userAdd)
+        }
+    })
+    // END --> (CREATE) PUT/POST
+
+    // (DELETE) DEL
+    server.delete('/user/del/:id', (req: Request, res: Response) => {
+        const { id } = req.params
+        //let mY = parseInt(id) - 1;
+        const deleted = dataNames.users.find(
+            (user) => user.id.toString() === id,
+        )
+
+        if (deleted) {
+            dataNames.users = dataNames.users.filter(
+                (user) => user.id.toString() !== id,
+            )
+            res.json(deleted)
+        } else {
+            res.send('Provided game id is invalid!')
+        }
+        //console.log(deleted);
+    })
+    // END --> (DELETE) DEL
+
+    // UPDATE (PUT)
+    server.put('/user/update/:id', (req: Request, res: Response) => {
+        const userUpdate = req.body
+        const { id } = req.params
+        const myID = parseInt(id)
+        userUpdate.id = parseInt(id)
+
+        let index = dataNames.users.findIndex((item) => item.id === myID)
+        console.log(id, index)
+
+        if (index == undefined || index <= -1) {
+            res.send('Provided game ID is occupied!')
+        } else {
+            console.log(dataNames.users[index])
+            dataNames.users[index] = userUpdate
+            res.json(userUpdate)
+        }
+    })
+    // END --> UPDATE (POST)
+// USER - END
+
+// GAMES - START
     // (READ) GET
     //GET ALL
     server.get('/games', (req: Request, res: Response) => {
@@ -132,9 +188,9 @@ export const startServer = ({ port, corsOptions }: TServer) => {
         }
     })
     // END --> UPDATE (POST)
-    // GAMES - END
+// GAMES - END
 
-    // REVIEWS - START
+// REVIEWS - START
     server.get('/reviews', (req: Request, res: Response) => {
         res.json(dataReviews)
     })
@@ -152,7 +208,9 @@ export const startServer = ({ port, corsOptions }: TServer) => {
             res.send('Provided review id is invalid!')
         }
     })
-    // REVIEWS - END
+// REVIEWS - END
+
+
 
     server.listen(port, () => {
         logger.info(`Server for ${config.name} ready at port ${port}`)
