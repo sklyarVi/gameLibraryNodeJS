@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap");
+
 ul.lista {
     padding-left: 40px;
 }
 ul.lista > li {
-   margin: 20px;
-   list-style-type: circle;
+    margin: 20px;
+    list-style-type: circle;
 }
 
 .contactH2{
-    color: red; 
+    color: red;
 }
 
 .games, .users {
@@ -37,10 +38,22 @@ button {
     align-items: center;
     height: 55px;
 }
+.login-container{
+    margin-top: 5%;
+}
+
+.login-form {
+    margin-top: 3%;
+    width: 35%;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .link-header {
-    width: 15%;
+    width: 13%;
     text-align: center;
+
 }
 
 .link-header > a {
@@ -61,22 +74,14 @@ button {
     margin: 0;
 }
 
-input.valid[type=number]:not(.browser-default).validRed {
-    border-bottom: 1px solid #F44336;
-    box-shadow: 0 1px 0 0 #f44336;
-}
+.footer{
+    z-index:2;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #ee6e73;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 
-input.valid[type=number]:not(.browser-default).validGreen {
-    border-bottom: 1px solid #4CAF50;
-    box-shadow: 0 1px 0 0 #4caf50;
-}
-
-input.invalid[type=number]:not(.browser-default).validRed {
-    border-bottom: 1px solid #F44336;
-    box-shadow: 0 1px 0 0 #f44336;
-}
-
-input.invalid[type=number]:not(.browser-default).validGreen {
-    border-bottom: 1px solid #4CAF50;
-    box-shadow: 0 1px 0 0 #4caf50;
 }

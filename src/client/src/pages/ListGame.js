@@ -113,21 +113,16 @@ function ListGame(props) {
         }
     }
 
-    // function onTrigger(item) {
-    //     console.log( item );
-    //     props.parentCallback( item );
-    // };onTrigger(item.id)
-
     const listComp = sampleData.map((item) => (
         <tr key={item.id}>
-            <td> {item.title} </td>
-            <td> {item.genre} </td>
-            <td> {item.released} </td>
-            <td> {item.ranking} </td>
+            <td className='center'> {item.title} </td>
+            <td className='center'> {item.genre} </td>
+            <td className='center'> {item.released} </td>
+            <td className='center'> {item.ranking} </td>
             <td className='center'>
                 <Link to={`/game/${item.id}`}>
                     <button
-                        className="waves-effect waves-light btn-floating btn-large btn green"
+                        className="waves-effect waves-light btn-floating btn-small btn green"
                         onClick={() => props.pC(item.id)}
                     >
                         <i className="material-icons">preview</i>
@@ -135,7 +130,7 @@ function ListGame(props) {
                 </Link>
                 <Link to={`/game/update/${item.id}`}>
                     <button
-                        className="waves-effect waves-light btn-floating btn-large btn light-blue darken-1"
+                        className="waves-effect waves-light btn-floating btn-small btn light-blue darken-1"
                         onClick={() => props.edit(item.id)}
                     >
                         <i className="material-icons-outlined">edit</i>
@@ -143,7 +138,7 @@ function ListGame(props) {
                 </Link>
                 <Link to={`/game/del/${item.id}`}>
                     <button
-                        className="waves-effect waves-light btn-floating btn-large btn red"
+                        className="waves-effect waves-light btn-floating btn-small btn red"
                         onClick={() => props.del(item.id)}
                     >
                         <i className="material-icons-outlined">
@@ -158,7 +153,7 @@ function ListGame(props) {
     return (
         <>
             <tr>
-                <th>
+                <th className='center'>
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -169,7 +164,7 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th>
+                <th className='center'>
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -180,7 +175,7 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th>
+                <th className='center'>
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -191,7 +186,7 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th>
+                <th className='center'>
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -216,10 +211,10 @@ function ListGame(props) {
                 
             </tr>
             <tr>
-                <th> Title </th>
-                <th> Genre </th>
-                <th> Released </th>
-                <th> Ranking </th>
+                <th className='center'> Title </th>
+                <th className='center'> Genre </th>
+                <th className='center'> Released </th>
+                <th className='center'> Ranking </th>
                 <th className='center' > Actions </th>
             </tr>
 
