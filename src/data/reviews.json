@@ -1,32 +1,27 @@
 {
     "reviews": [
         {
-            "id": 1,
-            "game": "Counter-Strike Global Offensive",
+            "idGame": 1,
             "stars": 4.5,
             "feedback": "Great game but very addictive"
         },
         {
-            "id": 2,
-            "game": "Diablo 3",
+            "idGame": 2,
             "stars": 5,
             "feedback": "Amazing!"
         },
         {
-            "id": 3,
-            "game": "League of Legends",
+            "idGame": 3,
             "stars": 5,
             "feedback": "Great game but very toxic"
         },
         {
-            "id": 4,
-            "game": "Tom Clancy Rainbow's six",
+            "idGame": 4,
             "stars": 3.5,
             "feedback": "Not soo good"
         },
         {
-            "id": 5,
-            "game": "Final Fantasy 8",
+            "idGame": 5,
             "stars": 5,
             "feedback": "Fun to play but addictive"
         }

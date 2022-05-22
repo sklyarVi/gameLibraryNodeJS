@@ -7,7 +7,7 @@ function ListGame(props) {
     const sortToData = props.data
     const [sampleData, setSampleData] = useState([])
     const [clickSort, setCount1] = useState(null)
-
+    
     useEffect(() => {
         setSampleData(sortToData)
     }, [])
@@ -112,7 +112,8 @@ function ListGame(props) {
             default:
         }
     }
-
+    console.log(sampleData);
+    
     const listComp = sampleData.map((item) => (
         <tr key={item.id}>
             <td className='center'> {item.title} </td>

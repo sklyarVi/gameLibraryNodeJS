@@ -1,5 +1,6 @@
 import React, {useEffect}  from 'react';
-import {Outlet, Link, Route, useLocation, useParams} from "react-router-dom";
+import {Outlet, Link, useLocation} from "react-router-dom";
+//import {useContext} from './pages/UserContext';
 
 const ADMIN_PATHS = '/admin'
 
@@ -10,7 +11,7 @@ const Layout = () => {
         const params = new URLSearchParams(window.location.search)
         const token = params.get('token');
 
-        const result = await fetch("http://localhost:5554/users/login", {
+        const result = await fetch("http://localhost:5555/users/login", {
             headers: {
                 authorization: token
             }
@@ -34,7 +35,7 @@ const Layout = () => {
         <nav className='left-align'>
           <div className="nav-wrapper container">
             <Link to="/" className="brand-logo">
-              <i className='material-icons-outlined left'> sports_esports </i>
+              <i className='material-icons-outlined medium left'> sports_esports </i>
               GameLibrary
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">

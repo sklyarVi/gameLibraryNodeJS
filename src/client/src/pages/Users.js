@@ -27,7 +27,7 @@ class Users extends React.Component {
     render() {
         const { DataisLoaded, items } = this.state;
 
-        let arrUser = items.users;
+        let arrUser = items;
         //liste.sort();
         //arrUser.sort( (a,b) => a.ranking - b.ranking)
 
@@ -43,7 +43,7 @@ class Users extends React.Component {
                     <tbody>
                     <tr>
                         <th className='center'> Nickname </th>
-                        <th className='center'> Name </th>
+                        <th className='center'> Firstname </th>
                         <th className='center'> Lastname </th>
                         <th className='center'> Age </th>
                         <th className='center'> Actions </th>
@@ -51,8 +51,8 @@ class Users extends React.Component {
                     { arrUser.map((item) => (
                         <tr  key = { item.id }>
                             <td> { item.nickname } </td>
-                            <td> { item.name } </td>
-                            <td> { item.last_name } </td>
+                            <td> { item.firstName } </td>
+                            <td> { item.lastName } </td>
                             <td> { item.age } </td>
                             <td>
                                 <Link to={`/user/update/${item.id}`}>

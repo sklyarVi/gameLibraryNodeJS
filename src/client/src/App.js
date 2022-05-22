@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 import 'materialize-css';
 import './style.css';
 import Layout from "./pages/Layout";
@@ -13,7 +13,8 @@ import DelGame from "./pages/DelGame";
 import UpdateGame from './pages/UpdateGame';
 import AddGame from './pages/AddGame';
 import Footer from './pages/Footer';
-import Login from './pages/Login'
+import Login from './pages/Login';
+//import {useContext} from './pages/UserContext';
 //import 'material-design-icons/iconfont/material-icons.css';
 
 function App() {
@@ -22,26 +23,26 @@ function App() {
     setData(id);
   }
   return (
-      <div className='center'>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={ <Home />} />
-              <Route path="login" element={<Login/>}/>
-              <Route path="users" element={<Users />} />
-              <Route path="games" element={<GetGame getData={getName}/>} />
-              <Route path="/game/:id" element={<ViewGame data={data}/>} />
-              <Route path="/game/update/:id" element={<UpdateGame data={data}/>} />
-              <Route path="/game/add" element={<AddGame/>} />
-              <Route path="/game/del/:id" element={<DelGame data={data}/>} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="*" element={<NoPage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-        <Footer/>
-      </div>
-  );
+    <div className='center'>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={ <Home />} />
+            <Route path="login" element={<Login/>}/>
+            <Route path="users" element={<Users />} />
+            <Route path="games" element={<GetGame getData={getName}/>} />
+            <Route path="/game/:id" element={<ViewGame data={data}/>} />
+            <Route path="/game/update/:id" element={<UpdateGame data={data}/>} />
+            <Route path="/game/add" element={<AddGame/>} />
+            <Route path="/game/del/:id" element={<DelGame data={data}/>} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <Footer/>
+    </div>
+  )
 
 }
 

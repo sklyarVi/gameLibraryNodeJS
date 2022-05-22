@@ -8,7 +8,9 @@ import dataReviews from 'src/data/reviews.json'
 import { logger } from 'src/logger'
 import { TServer } from 'src/types/server.types'
 import config from 'src/config'
-import {loginUser, readUser, redUsers} from "src/routes/users";
+import {loginUser,readUsers, readUser, addUser, updateUser, deleteUser} from "src/routes/users";
+import {readGames, readGame, addGame, updateGame, deleteGame} from "src/routes/games";
+import {readReviews, readReview, addReview, updateReview, deleteReview} from "src/routes/reviews";
 // import dataRegister from 'data/register.json'
 
 const LIMITER_TIME = 15 * 60 * 1000
@@ -32,113 +34,28 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     })
 
     // USERS - START
-    server.get('/users', redUsers)
-    server.get('/users/login', loginUser)
+    server.get('/users', readUsers)
     server.get('/user/:id', readUser)
+    server.get('/users/login', loginUser)
+    server.post('/user/post', addUser)
+    server.delete('/user/del/:id', deleteUser)
+    server.put('/user/update/:id', updateUser)
     // USERS - END
 
     // GAMES - START
-    // (READ) GET
-    //GET ALL
-    server.get('/games', (req: Request, res: Response) => {
-        // res.setHeader('Content-Type', 'application/json')
-        // res.send(JSON.stringify(dataGames))
-        res.json(dataGames.games)
-    })
-    //GET ONE
-    server.get('/game/:id', (req: Request, res: Response) => {
-        let found = false
-        dataGames.games.forEach((element) => {
-            if (element.id.toString() === req.params.id) {
-                found = true
-                res.json(element)
-            }
-        })
-
-        if (!found) {
-            res.send('Provided game id is invalid!')
-        }
-    })
-    // END --> (READ) GET
-
-    // (CREATE) PUT/POST
-    server.post('/game/post', (req: Request, res: Response) => {
-        const gameAdd = req.body
-        let filtres = dataGames.games.filter((game) => game.id == gameAdd.id)
-
-        if (filtres.length == 1) {
-            console.log('xD')
-            res.send('Provided game ID is occupied!')
-        } else if (filtres.length == 0) {
-            dataGames.games.push(gameAdd)
-            res.json(gameAdd)
-            console.log(gameAdd)
-        }
-    })
-    // END --> (CREATE) PUT/POST
-
-    // (DELETE) DEL
-    server.delete('/game/del/:id', (req: Request, res: Response) => {
-        const { id } = req.params
-        //let mY = parseInt(id) - 1;
-        const deleted = dataGames.games.find(
-            (game) => game.id.toString() === id,
-        )
-
-        if (deleted) {
-            //delete dataGames.games[mY];
-            dataGames.games = dataGames.games.filter(
-                (game) => game.id.toString() !== id,
-            )
-            res.json(deleted)
-        } else {
-            res.send('Provided game id is invalid!')
-        }
-        //console.log(deleted);
-    })
-    // END --> (DELETE) DEL
-
-    // UPDATE (PUT)
-    server.put('/game/update/:id', (req: Request, res: Response) => {
-        const gameUpdate = req.body
-        const { id } = req.params
-        const myID = parseInt(id)
-        gameUpdate.id = parseInt(id)
-
-        let index = dataGames.games.findIndex((item) => item.id === myID)
-        console.log(id, index)
-
-        if (index == undefined || index <= -1) {
-            res.send('Provided game ID is occupied!')
-        } else {
-            console.log(dataGames.games[index])
-            dataGames.games[index] = gameUpdate
-            res.json(gameUpdate)
-
-            console.log(dataGames.games[index])
-        }
-    })
-    // END --> UPDATE (POST)
+    server.get('/games', readGames)
+    server.get('/game/:id', readGame)
+    server.post('/game/post', addGame)
+    server.put('/game/update/:id', updateGame)
+    server.delete('/game/del/:id', deleteGame)
     // GAMES - END
 
     // REVIEWS - START
-    server.get('/reviews', (req: Request, res: Response) => {
-        res.json(dataReviews)
-    })
-
-    server.get('/review/:id', (req: Request, res: Response) => {
-        let found = false
-        dataReviews.reviews.forEach((element) => {
-            if (element.id.toString() === req.params.id) {
-                found = true
-                res.json(element)
-            }
-        })
-
-        if (!found) {
-            res.send('Provided review id is invalid!')
-        }
-    })
+    server.get('/reviews', readGames)
+    server.get('/review/:id', readGame)
+    server.post('/review/post', addGame)
+    server.put('/review/update/:id', updateGame)
+    server.delete('/review/del/:id', deleteGame)
     // REVIEWS - END
 
     server.listen(port, () => {
