@@ -1,4 +1,4 @@
-import express, {Request, Response} from "express";
+import {Request, Response} from "express";
 
 import dataGames from 'src/data/games.json';
 
@@ -21,7 +21,7 @@ export const readGame = (req: Request, res: Response) => {
 
 export const addGame = (req: Request, res: Response) => {
     const gameAdd = req.body
-    let filtres = dataGames.games.filter((game) => game.id == gameAdd.id)
+    const filtres = dataGames.games.filter((game) => game.id == gameAdd.id)
 
     if (filtres.length == 1) {
         console.log('xD')
@@ -38,7 +38,7 @@ export const updateGame = (req: Request, res: Response) => {
     const myID = parseInt(id)
     gameUpdate.id = parseInt(id)
 
-    let index = dataGames.games.findIndex((item) => item.id === myID)
+    const index = dataGames.games.findIndex((item) => item.id === myID)
 
     if (index == undefined || index <= -1) {
         res.send('Provided game ID is occupied!')

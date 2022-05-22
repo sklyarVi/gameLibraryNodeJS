@@ -1,10 +1,7 @@
-import express, { json, Request, Response } from 'express'
+import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import limit from 'express-rate-limit'
-
-import dataGames from 'src/data/games.json'
-import dataReviews from 'src/data/reviews.json'
 import { logger } from 'src/logger'
 import { TServer } from 'src/types/server.types'
 import config from 'src/config'
@@ -51,11 +48,11 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     // GAMES - END
 
     // REVIEWS - START
-    server.get('/reviews', readGames)
-    server.get('/review/:id', readGame)
-    server.post('/review/post', addGame)
-    server.put('/review/update/:id', updateGame)
-    server.delete('/review/del/:id', deleteGame)
+    server.get('/reviews', readReviews)
+    server.get('/review/:id', readReview)
+    server.post('/review/post', addReview)
+    server.put('/review/update/:id', updateReview)
+    server.delete('/review/del/:id', deleteReview)
     // REVIEWS - END
 
     server.listen(port, () => {

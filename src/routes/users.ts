@@ -1,4 +1,4 @@
-import express, {Request, Response} from "express";
+import {Request, Response} from "express";
 
 import dataNames from 'src/data/users.json';
 
@@ -10,6 +10,7 @@ export const readUsers = (req: Request, res: Response) => {
 //TODO
 const getIdFromToken = (token: string) => {
     //npm jwt
+    //let tokenConst = token;
     return 1;
 }
 
@@ -43,10 +44,9 @@ export const readUser = (req: Request, res: Response) => {
 
 export const addUser = (req: Request, res: Response) => {
     const userAdd = req.body
-    let filtres = dataNames.users.filter((user) => user.id == userAdd.id)
+    const filtres = dataNames.users.filter((user) => user.id == userAdd.id)
 
     if (filtres.length == 1) {
-        console.log('xD')
         res.send('Provided game ID is occupied!')
     } else if (filtres.length == 0) {
         dataNames.users.push(userAdd)
@@ -60,7 +60,7 @@ export const updateUser = (req: Request, res: Response) => {
     const myID = parseInt(id)
     gameUpdate.id = parseInt(id)
 
-    let index = dataNames.users.findIndex((item) => item.id === myID)
+    const index = dataNames.users.findIndex((item) => item.id === myID)
     console.log(id, index)
 
     if (index == undefined || index <= -1) {
@@ -69,8 +69,6 @@ export const updateUser = (req: Request, res: Response) => {
         console.log(dataNames.users[index])
         dataNames.users[index] = gameUpdate
         res.json(gameUpdate)
-
-        console.log(dataNames.users[index])
     }
 }
 
