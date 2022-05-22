@@ -1,30 +1,30 @@
-import {Request, Response} from "express";
+import { Request, Response } from 'express'
 
-import dataNames from 'src/data/users.json';
+import dataNames from 'src/data/users.json'
 
 // USERS - START
 export const readUsers = (req: Request, res: Response) => {
-    res.json(dataNames.users);
+    res.json(dataNames.users)
 }
 
 //TODO
 const getIdFromToken = (token: string) => {
     //npm jwt
     //let tokenConst = token;
-    return 1;
+    return 1
 }
 
 export const loginUser = (req: Request, res: Response) => {
     const token = req.headers?.authorization
-    const id = getIdFromToken(token as string);
+    const id = getIdFromToken(token as string)
 
-    const user = dataNames.users.filter(user => user.id === id);
-    if(user) {
-        res.status(200);
-        res.json({...user?.[0], password: "***********"});
+    const user = dataNames.users.filter((user) => user.id === id)
+    if (user) {
+        res.status(200)
+        res.json({ ...user?.[0], password: '***********' })
     } else {
-        res.status(401);
-        res.send();
+        res.status(401)
+        res.send()
     }
 }
 
@@ -47,7 +47,7 @@ export const addUser = (req: Request, res: Response) => {
     const filtres = dataNames.users.filter((user) => user.id == userAdd.id)
 
     if (filtres.length == 1) {
-        res.send('Provided game ID is occupied!')
+        res.send('Provided user id is occupied!')
     } else if (filtres.length == 0) {
         dataNames.users.push(userAdd)
         res.json(userAdd)
@@ -64,7 +64,7 @@ export const updateUser = (req: Request, res: Response) => {
     console.log(id, index)
 
     if (index == undefined || index <= -1) {
-        res.send('Provided game ID is occupied!')
+        res.send('Provided user id is occupied!')
     } else {
         console.log(dataNames.users[index])
         dataNames.users[index] = gameUpdate
@@ -75,9 +75,7 @@ export const updateUser = (req: Request, res: Response) => {
 export const deleteUser = (req: Request, res: Response) => {
     const { id } = req.params
     //let mY = parseInt(id) - 1;
-    const deleted = dataNames.users.find(
-        (user) => user.id.toString() === id,
-    )
+    const deleted = dataNames.users.find((user) => user.id.toString() === id)
 
     if (deleted) {
         //delete dataGames.games[mY];
@@ -86,7 +84,7 @@ export const deleteUser = (req: Request, res: Response) => {
         )
         res.json(deleted)
     } else {
-        res.send('Provided game id is invalid!')
+        res.send('Provided user id is invalid!')
     }
     //console.log(deleted);
 }
