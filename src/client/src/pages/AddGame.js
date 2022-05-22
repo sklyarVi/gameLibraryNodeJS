@@ -20,7 +20,7 @@ function AddGame() {
     let theSame = games.map((game) => game.id)
 
     useEffect(() => {
-        fetch('http://localhost:5555/games')
+        fetch('http://localhost:5554/games')
             .then((res) => res.json())
             .then((json) => {
                 setGames(json)
@@ -57,7 +57,7 @@ function AddGame() {
             setErr('Please fill all required fields')
             console.log(messErr)
         } else {
-            fetch('http://localhost:5555/game/post/', {
+            fetch('http://localhost:5554/game/post/', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
