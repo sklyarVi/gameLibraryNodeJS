@@ -16,7 +16,7 @@ export const readReview = (req: Request, res: Response) => {
     })
 
     if (!found) {
-        res.send('Provided game id is invalid!')
+        res.send('Provided review id is invalid!')
     }
 }
 
@@ -26,7 +26,7 @@ export const addReview = (req: Request, res: Response) => {
 
     if (filtres.length == 1) {
         console.log('xD')
-        res.send('Provided game ID is occupied!')
+        res.send('Provided review id is occupied!')
     } else if (filtres.length == 0) {
         dataReviews.reviews.push(revAdd)
         res.json(revAdd)
@@ -42,7 +42,7 @@ export const updateReview = (req: Request, res: Response) => {
     const index = dataReviews.reviews.findIndex((item) => item.idGame === myID)
 
     if (index == undefined || index <= -1) {
-        res.send('Provided game ID is occupied!')
+        res.send('Provided review id is occupied!')
     } else {
         dataReviews.reviews[index] = gameUpdate
         res.json(gameUpdate)
@@ -61,6 +61,6 @@ export const deleteReview = (req: Request, res: Response) => {
         )
         res.json(deleted)
     } else {
-        res.send('Provided game id is invalid!')
+        res.send('Provided review id is invalid!')
     }
 }
