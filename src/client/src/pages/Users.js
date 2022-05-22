@@ -39,7 +39,7 @@ class Users extends React.Component {
         return (
             <div className = "users">
                 <h2> Users from an API: </h2>
-                <table className='centered'>
+                <table className='centered striped white z-depth-3'>
                     <tbody>
                     <tr>
                         <th className='center'> Nickname </th>
@@ -56,9 +56,7 @@ class Users extends React.Component {
                             <td> { item.age } </td>
                             <td>
                                 <Link to={`/user/update/${item.id}`}>
-                                    <button
-                                        className="waves-effect waves-light btn-floating btn-small btn light-blue darken-1"
-                                    >
+                                    <button className="waves-effect waves-light btn-floating btn-small btn light-blue darken-1">
                                         <i className="material-icons-outlined">edit</i>
                                     </button>
                                 </Link>

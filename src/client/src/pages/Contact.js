@@ -2,9 +2,9 @@ import React  from 'react';
 
 const Contact = () => {
   return (
-    <div className="container">
+    <div className="contact container z-depth-3 white">
         <div> 
-          <h1>Contact Me</h1>
+          <h1>Contact Us</h1>
         </div>
         <hr></hr>
         <div> 

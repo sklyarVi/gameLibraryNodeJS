@@ -153,7 +153,7 @@ function ListGame(props) {
 
     return (
         <>
-            <tr>
+            <tr className='borderShadow'>
                 <th className='center'>
                     {' '}
                     <button
@@ -207,9 +207,7 @@ function ListGame(props) {
                             <i className="material-icons-outlined left">add</i> Add New Game 
                         </button>
                     </Link>
-                </th>
-                
-                
+                </th>               
             </tr>
             <tr>
                 <th className='center'> Title </th>
