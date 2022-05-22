@@ -30,7 +30,7 @@ class ViewGame extends React.Component {
     render() {
         const { DataisLoaded, items } = this.state; 
         console.log(items);
-        if (!DataisLoaded) return <div> <h1> Pleses wait few time.... </h1> </div> ;
+        if (!DataisLoaded) return <div> <h1> Please wait for a while.... </h1> </div> ;
 
         return (
             <div className = "games">
@@ -42,21 +42,21 @@ class ViewGame extends React.Component {
                         <h2>  One game from an API: </h2>
                     </div>
                 </div>
-                <table>
+                <table className='margin-2prc padding-row striped white z-depth-2'>
                     <tbody>
                         <tr>
-                          <th> ID </th>
-                          <th> Title </th>
-                          <th> Genre </th>
-                          <th> Released </th>
-                          <th> Ranking </th>
+                          <th className='center'> ID </th>
+                          <th className='center'> Title </th>
+                          <th className='center'> Genre </th>
+                          <th className='center'> Released </th>
+                          <th className='center'> Ranking </th>
                         </tr>
                         <tr  key = { items.id }>
-                          <td> { items.id } </td>
-                          <td> { items.title } </td>
-                          <td> { items.genre } </td>
-                          <td> { items.released } </td>
-                          <td> { items.ranking } </td>
+                          <td className='center'> { items.id } </td>
+                          <td className='center'> { items.title } </td>
+                          <td className='center'> { items.genre } </td>
+                          <td className='center'> { items.released } </td>
+                          <td className='center'> { items.ranking } </td>
                         </tr>
                     </tbody>
                 </table>

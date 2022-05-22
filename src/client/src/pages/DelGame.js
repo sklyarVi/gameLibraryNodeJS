@@ -44,21 +44,21 @@ class DelGame extends React.Component {
                         <h2>  This game has been removed: </h2>
                     </div>
                 </div>
-                <table>
-                    <tbody>
+                <table className='margin-2prc padding-row striped white z-depth-2' >
+                    <tbody className='margin-2prc'>
                         <tr>
-                          <th> ID </th>
-                          <th> Title </th>
-                          <th> Genre </th>
-                          <th> Released </th>
-                          <th> Ranking </th>
+                          <th className='center'> ID </th>
+                          <th className='center'> Title </th>
+                          <th className='center'> Genre </th>
+                          <th className='center'> Released </th>
+                          <th className='center'> Ranking </th>
                         </tr>
                         <tr  key = { items.id }>
-                          <td> { items.id } </td>
-                          <td> { items.title } </td>
-                          <td> { items.genre } </td>
-                          <td> { items.released } </td>
-                          <td> { items.ranking } </td>
+                          <td className='center'> { items.id } </td>
+                          <td className='center'> { items.title } </td>
+                          <td className='center'> { items.genre } </td>
+                          <td className='center'> { items.released } </td>
+                          <td className='center'> { items.ranking } </td>
                         </tr>
                     </tbody>
                 </table>

@@ -84,9 +84,9 @@ function AddGame() {
                     <h2> You are added this game: </h2>
                 </div>
             </div>
-            <div className="row">
+            <div className="row padding-row striped white z-depth-2">
                 <form className="col s12">
-                    <div className="row">
+                    <div className="row ">
                         <div className="input-field col s12">
                             <input
                                 placeholder="ID"

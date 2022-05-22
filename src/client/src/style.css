@@ -61,6 +61,14 @@ table.striped tr.borderShadow {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.padding-row {
+    border-radius: 25px;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+.margin-2prc {
+    margin-top: 2%;
+}
 /* strzałka back */
 .header {
     display: flex;
