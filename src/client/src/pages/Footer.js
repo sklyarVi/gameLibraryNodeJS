@@ -5,7 +5,7 @@ const Footer = () => {
         <>
             <footer className="footer page-footer deep-purple lighten-2">
                 <div className="container">
-                    © 2022 Copyright Text
+                    © 2022 Copyright GameLibrary
                 </div>
             </footer>
         </>
