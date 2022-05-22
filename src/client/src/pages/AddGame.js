@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 //import {Table} from 'semantic-ui-react'
 //import { useParams } from 'react-router-dom'
@@ -10,42 +10,52 @@ import { Link } from 'react-router-dom'
 // }
 
 function AddGame() {
-    const [messGood, setGood] = useState('');
-    const [messErr, setErr] = useState('');
-    const [games, setGames] = useState([]);
-    const [classAdd, setClassAdd] = useState('');
-    const [id, setId] = useState();
+    const [messGood, setGood] = useState('')
+    const [messErr, setErr] = useState('')
+    const [games, setGames] = useState([])
+    const [classAdd, setClassAdd] = useState('')
+    const [id, setId] = useState()
 
-    let title, genre, released, ranking;
-    let theSame = games.map( game => game.id );
+    let title, genre, released, ranking
+    let theSame = games.map((game) => game.id)
 
-    useEffect( () => {
-        fetch("http://localhost:5555/games")
+    useEffect(() => {
+        fetch('http://localhost:5555/games')
             .then((res) => res.json())
             .then((json) => {
-                setGames( json )}
-        )
-    }, [] )
+                setGames(json)
+            })
+    }, [])
 
-    useEffect ( () => {
-        let pars = parseInt(id);
-        console.log(pars);
-        if ( theSame[id-1] === pars || isNaN(pars) ) {
-            setClassAdd(' validRed');
+    useEffect(() => {
+        let pars = parseInt(id)
+        console.log(pars)
+        if (theSame[id - 1] === pars || isNaN(pars)) {
+            setClassAdd(' validRed')
         } else {
             setClassAdd(' validGreen')
         }
-    }, [theSame])
+    }, [theSame, id])
 
     function updateMyGame() {
         let statusUpdate = 0
         let item = { id, title, genre, released, ranking }
         console.log(item)
 
-        if ( (id || title || genre || released || ranking !== "") ||
-         (id || title || genre || released || ranking !== undefined )) {
-            setErr ( 'Please fill in the blanks!!' );
-            console.log(messErr);
+        if (
+            id === '' ||
+            title === '' ||
+            genre === '' ||
+            released === '' ||
+            ranking === '' ||
+            id === undefined ||
+            title === undefined ||
+            genre === undefined ||
+            released === undefined ||
+            ranking === undefined
+        ) {
+            setErr('Please fill all required fields')
+            console.log(messErr)
         } else {
             fetch('http://localhost:5555/game/post/', {
                 method: 'POST',
@@ -60,9 +70,9 @@ function AddGame() {
                     console.log(json)
                     statusUpdate = 1
                 })
-            
+
             if (!statusUpdate) {
-                setGood ( ' Your game has been added! ' );
+                setGood('Your game has been added')
             }
         }
     }
@@ -81,7 +91,7 @@ function AddGame() {
                     </Link>
                 </div>
                 <div className="title-header">
-                    <h2> You are added this game: </h2>
+                    <h2> You added this game: </h2>
                 </div>
             </div>
             <div className="row padding-row striped white z-depth-2">
@@ -93,7 +103,7 @@ function AddGame() {
                                 id="ID"
                                 type="number"
                                 required
-                                className={ "validate " + classAdd }
+                                className={'validate ' + classAdd}
                                 onChange={(e) => {
                                     setId(e.target.value)
                                     //console.log(e.target.value)
@@ -193,17 +203,21 @@ function AddGame() {
                             className="col s4 waves-effect waves-light btn-large btn green right"
                             onClick={updateMyGame}
                         >
-                            <i className="material-icons-outlined left">
-                                send
-                            </i>
+                            <i className="material-icons-outlined left">send</i>
                             Submit
                         </button>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col s12 center ">
-                        <h2 id="messApi" className = 'green-text' > { messGood } </h2>
-                        <h2 id="messApi2" className = 'red-text' > { messErr } </h2>
+                        <h2 id="messApi" className="green-text">
+                            {' '}
+                            {messGood}{' '}
+                        </h2>
+                        <h2 id="messApi2" className="red-text">
+                            {' '}
+                            {messErr}{' '}
+                        </h2>
                     </div>
                 </div>
             </div>
