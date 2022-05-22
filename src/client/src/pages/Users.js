@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+//import {Link} from "react-router-dom";
 
 class Users extends React.Component {
 
@@ -34,7 +34,7 @@ class Users extends React.Component {
         console.log( arrUser );
 
         if (!DataisLoaded) return <div>
-            <h1> Pleses wait some time.... </h1> </div> ;
+            <h1> Please wait for a while.... </h1> </div> ;
 
         return (
             <div className = "users">
@@ -55,20 +55,19 @@ class Users extends React.Component {
                             <td> { item.lastName } </td>
                             <td> { item.age } </td>
                             <td>
-                                <Link to={`/user/update/${item.id}`}>
-                                    <button className="waves-effect waves-light btn-floating btn-small btn light-blue darken-1">
-                                        <i className="material-icons-outlined">edit</i>
-                                    </button>
-                                </Link>
-                                <Link to={`/user/del/${item.id}`}>
-                                    <button
-                                        className="waves-effect waves-light btn-floating btn-small btn red"
-                                    >
-                                        <i className="material-icons-outlined">
-                                            delete_outline
-                                        </i>
-                                    </button>
-                                </Link>
+                                <button className="waves-effect waves-light btn-floating btn-small btn light-blue darken-1"
+                                        onClick={ () => alert( " Freature not implementent " ) }
+                                >
+                                    <i className="material-icons-outlined">edit</i>
+                                </button>
+                                <button
+                                    className="waves-effect waves-light btn-floating btn-small btn red"
+                                    onClick={ () => alert( " Freature not implementent " ) }
+                                >
+                                    <i className="material-icons-outlined">
+                                        delete_outline
+                                    </i>
+                                </button>
                             </td>
                         </tr>
                     )) }
