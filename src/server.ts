@@ -5,9 +5,28 @@ import limit from 'express-rate-limit'
 import { logger } from 'src/logger'
 import { TServer } from 'src/types/server.types'
 import config from 'src/config'
-import {loginUser,readUsers, readUser, addUser, updateUser, deleteUser} from "src/routes/users";
-import {readGames, readGame, addGame, updateGame, deleteGame} from "src/routes/games";
-import {readReviews, readReview, addReview, updateReview, deleteReview} from "src/routes/reviews";
+import {
+    loginUser,
+    readUsers,
+    readUser,
+    addUser,
+    updateUser,
+    deleteUser,
+} from 'src/routes/users'
+import {
+    readGames,
+    readGame,
+    addGame,
+    updateGame,
+    deleteGame,
+} from 'src/routes/games'
+import {
+    readReviews,
+    readReview,
+    addReview,
+    updateReview,
+    deleteReview,
+} from 'src/routes/reviews'
 // import dataRegister from 'data/register.json'
 
 const LIMITER_TIME = 15 * 60 * 1000
@@ -51,7 +70,7 @@ export const startServer = ({ port, corsOptions }: TServer) => {
     server.get('/reviews', readReviews)
     server.get('/review/:id', readReview)
     server.post('/review/post', addReview)
-    server.put('/review/update/:id', updateReview)
+    server.put('/review/update/:idGame', updateReview)
     server.delete('/review/del/:id', deleteReview)
     // REVIEWS - END
 

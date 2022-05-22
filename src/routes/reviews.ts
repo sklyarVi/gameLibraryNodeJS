@@ -1,9 +1,9 @@
-import {Request, Response} from "express";
+import { Request, Response } from 'express'
 
-import dataReviews from 'src/data/reviews.json';
+import dataReviews from 'src/data/reviews.json'
 
 export const readReviews = (req: Request, res: Response) => {
-    res.json(dataReviews);
+    res.json(dataReviews.reviews)
 }
 
 export const readReview = (req: Request, res: Response) => {
@@ -12,7 +12,8 @@ export const readReview = (req: Request, res: Response) => {
         if (element.idGame.toString() === req.params.id) {
             found = true
             res.json(element)
-    }})
+        }
+    })
 
     if (!found) {
         res.send('Provided game id is invalid!')
@@ -34,9 +35,9 @@ export const addReview = (req: Request, res: Response) => {
 
 export const updateReview = (req: Request, res: Response) => {
     const gameUpdate = req.body
-    const { id } = req.params
-    const myID = parseInt(id)
-    gameUpdate.id = parseInt(id)
+    const { idGame } = req.params
+    const myID = parseInt(idGame)
+    gameUpdate.idGame = parseInt(idGame)
 
     const index = dataReviews.reviews.findIndex((item) => item.idGame === myID)
 
@@ -50,10 +51,14 @@ export const updateReview = (req: Request, res: Response) => {
 
 export const deleteReview = (req: Request, res: Response) => {
     const { id } = req.params
-    const deleted = dataReviews.reviews.find( (rev) => rev.idGame.toString() === id )
+    const deleted = dataReviews.reviews.find(
+        (rev) => rev.idGame.toString() === id,
+    )
 
     if (deleted) {
-        dataReviews.reviews = dataReviews.reviews.filter( (rev) => rev.idGame.toString() !== id )
+        dataReviews.reviews = dataReviews.reviews.filter(
+            (rev) => rev.idGame.toString() !== id,
+        )
         res.json(deleted)
     } else {
         res.send('Provided game id is invalid!')

@@ -9,7 +9,7 @@ if (_.isNil(noEnvFile)) require('dotenv').config()
 const env = (process.env.NODE_ENV || 'production') as TEnv
 const isDev = env === 'development'
 const isTest = env === 'test'
-const port = Number(process.env.APP_PORT) || 5555
+const port = Number(process.env.APP_PORT) || 5554
 
 const config: TConfig = {
     env,
