@@ -32,7 +32,7 @@ const Layout = () => {
 
     return (
       <>
-        <nav className='left-align'>
+        <nav className='left-align deep-purple lighten-2'>
           <div className="nav-wrapper container">
             <Link to="/" className="brand-logo">
               <i className='material-icons-outlined medium left'> sports_esports </i>

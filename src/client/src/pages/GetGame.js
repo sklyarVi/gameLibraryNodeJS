@@ -34,7 +34,7 @@ class GetGames extends React.Component {
 
 
             <h2> Games from an API: </h2>
-            <table>
+            <table className=' col s12 m6 striped white z-depth-5'>
                 <tbody>
                     <ListGame
                         data = {items} 

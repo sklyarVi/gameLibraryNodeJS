@@ -17,12 +17,36 @@ ul.lista > li {
     padding: 30px;
 }
 
+.games > h2 {
+    margin-bottom: 50px;
+}
+
 button {
     margin-right: 15px;
 }
 
 .btn-large i {
     font-size: 2rem;
+}
+
+.contact {
+    margin-top: 100px;
+    padding: 1px 50px 30px 50px;
+}
+
+.imgGame {
+    padding: 20px;
+    
+}
+
+.imgGame > img {
+    border-radius: 20px;
+    width: 500px;
+}
+
+
+table.striped tr.borderShadow {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /* strzałka back */
@@ -83,5 +107,9 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
+}
 
+body {
+
+    background: url(https://www.toptal.com/designers/subtlepatterns/uploads/triangle-mosaic.png) repeat;
 }
