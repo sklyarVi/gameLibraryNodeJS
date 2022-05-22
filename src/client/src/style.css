@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Material+Icons&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap');
 
 ul.lista {
     padding-left: 40px;
@@ -17,11 +17,12 @@ table {
     margin-bottom: 5%;
     border-radius: 25px;
 }
-.contactH2{
+.contactH2 {
     color: red;
 }
 
-.games, .users {
+.games,
+.users {
     padding: 30px;
 }
 
@@ -48,14 +49,12 @@ button {
 .imgGame {
     padding: 20px;
     margin-bottom: 5%;
-    
 }
 
 .imgGame > img {
     border-radius: 20px;
     width: 500px;
 }
-
 
 table.striped tr.borderShadow {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -82,7 +81,7 @@ table.striped tr.borderShadow {
     align-items: center;
     height: 55px;
 }
-.login-container{
+.login-container {
     margin-top: 5%;
 }
 
@@ -97,7 +96,6 @@ table.striped tr.borderShadow {
 .link-header {
     width: 13%;
     text-align: center;
-
 }
 
 .link-header > a {
@@ -118,8 +116,8 @@ table.striped tr.borderShadow {
     margin: 0;
 }
 
-.footer{
-    z-index:2;
+.footer {
+    z-index: 2;
     margin-top: 1rem;
     padding: 0.5rem;
     background-color: #ee6e73;
@@ -130,6 +128,16 @@ table.striped tr.borderShadow {
 }
 
 body {
+    background: url(https://www.toptal.com/designers/subtlepatterns/uploads/triangle-mosaic.png)
+        repeat;
+}
 
-    background: url(https://www.toptal.com/designers/subtlepatterns/uploads/triangle-mosaic.png) repeat;
+input.valid[type='number']:not(.browser-default).validGreen {
+    border-bottom: 1px solid #4caf50;
+    box-shadow: 0 1px 0 0 #4caf50;
+}
+
+input.valid[type='number']:not(.browser-default).validRed {
+    border-bottom: 1px solid #f44336;
+    box-shadow: 0 1px 0 0 #f44336;
 }
