@@ -141,3 +141,13 @@ input.valid[type='number']:not(.browser-default).validRed {
     border-bottom: 1px solid #f44336;
     box-shadow: 0 1px 0 0 #f44336;
 }
+
+input.invalid[type='number']:not(.browser-default).validGreen {
+    border-bottom: 1px solid #4caf50;
+    box-shadow: 0 1px 0 0 #4caf50;
+}
+
+input.invalid[type='number']:not(.browser-default).validRed {
+    border-bottom: 1px solid #f44336;
+    box-shadow: 0 1px 0 0 #f44336;
+}
