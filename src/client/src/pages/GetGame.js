@@ -27,15 +27,15 @@ class GetGames extends React.Component {
         const { DataisLoaded, items } = this.state;
 
         if (!DataisLoaded) return <div>
-            <h1> Pleses wait some time.... </h1> </div> ;
+            <h1> Please wait for a while.... </h1> </div> ;
 
         return (
         <div className = "games">
 
 
             <h2> Games from an API: </h2>
-            <table className=' col s12 m6 striped white z-depth-5'>
-                <tbody>
+            <table className='padding-row margin-2prc striped white z-depth-2'>
+                <tbody className='padding-row margin-2prc striped white z-depth-2'>
                     <ListGame
                         data = {items} 
                         pC = {this.props.getData}
