@@ -6,6 +6,7 @@ import React from 'react';
 // //         <div c = (name) =>
 //     name === elassName="error">{errorMessages.message}</div>
 //     );
+
 const Login = () => {
     return (
         <>
@@ -25,13 +26,13 @@ const Login = () => {
                                 {/*{renderErrorMessage("pass")}*/}
                             </div>
                             <div className="button-container">
-                                <button className='btn waves-effect waves-light'  type="submit" name='Login' > Login <i
-                                    className="material-icons right">login</i></button>
+                                <button className='btn waves-effect waves-light'  type="submit" name='Login' >
+                                    Login <i className="material-icons right">login</i>
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
-
             </div>
         </>
     )
