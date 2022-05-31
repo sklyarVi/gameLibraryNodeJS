@@ -1,6 +1,6 @@
 # gameLibraryNodeJS
 
-Rest Api (study project)
+NodeJS Express Rest API with basic Frontend (study project)
 
 Please add .env file to src/client after cloning this repository.
 And paste inside "SKIP_PREFLIGHT_CHECK=true".
