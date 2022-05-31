@@ -7,7 +7,7 @@ function ListGame(props) {
     const sortToData = props.data
     const [sampleData, setSampleData] = useState([])
     const [clickSort, setCount1] = useState(null)
-    
+
     useEffect(() => {
         setSampleData(sortToData)
     }, [])
@@ -112,15 +112,15 @@ function ListGame(props) {
             default:
         }
     }
-    console.log(sampleData);
-    
+    console.log(sampleData)
+
     const listComp = sampleData.map((item) => (
         <tr key={item.id}>
-            <td className='center'> {item.title} </td>
-            <td className='center'> {item.genre} </td>
-            <td className='center'> {item.released} </td>
-            <td className='center'> {item.ranking} </td>
-            <td className='center'>
+            <td className="center"> {item.title} </td>
+            <td className="center"> {item.genre} </td>
+            <td className="center"> {item.released} </td>
+            <td className="center"> {item.ranking} </td>
+            <td className="center">
                 <Link to={`/game/${item.id}`}>
                     <button
                         className="waves-effect waves-light btn-floating btn-small btn green"
@@ -153,8 +153,8 @@ function ListGame(props) {
 
     return (
         <>
-            <tr className='borderShadow'>
-                <th className='center'>
+            <tr className="borderShadow">
+                <th className="center">
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -165,7 +165,7 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th className='center'>
+                <th className="center">
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -176,7 +176,7 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th className='center'>
+                <th className="center">
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -187,7 +187,7 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th className='center'>
+                <th className="center">
                     {' '}
                     <button
                         className="waves-effect waves-light btn"
@@ -198,23 +198,31 @@ function ListGame(props) {
                         Sort
                     </button>{' '}
                 </th>
-                <th className='center'>
-                    <button className="waves-effect waves-light btn" onClick={() => handleSort(4)} >
-                        <i className="material-icons-outlined left"> restart_alt </i> Reset
+                <th className="center">
+                    <button
+                        className="waves-effect waves-light btn"
+                        onClick={() => handleSort(4)}
+                    >
+                        <i className="material-icons-outlined left">
+                            {' '}
+                            restart_alt{' '}
+                        </i>{' '}
+                        Reset
                     </button>
                     <Link to={`/game/add`}>
-                        <button className="waves-effect waves-light btn yellow darken-2" >
-                            <i className="material-icons-outlined left">add</i> Add New Game 
+                        <button className="waves-effect waves-light btn yellow darken-2">
+                            <i className="material-icons-outlined left">add</i>{' '}
+                            Add New Game
                         </button>
                     </Link>
-                </th>               
+                </th>
             </tr>
             <tr>
-                <th className='center'> Title </th>
-                <th className='center'> Genre </th>
-                <th className='center'> Released </th>
-                <th className='center'> Ranking </th>
-                <th className='center' > Actions </th>
+                <th className="center"> Title </th>
+                <th className="center"> Genre </th>
+                <th className="center"> Released </th>
+                <th className="center"> Ranking </th>
+                <th className="center"> Actions </th>
             </tr>
 
             {listComp}
