@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 // const [errorMessages, setErrorMessages] = useState({});
 // const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -13,11 +13,11 @@ const Login = () => {
             <div className="container login-container">
                 <h4>Login:</h4>
                 <div className="container center login-form">
-                    <div  className="container">
+                    <div className="container">
                         <form>
                             <div className="input-container">
                                 <label>Username </label>
-                                <input type="text" name="uname" required  />
+                                <input type="text" name="uname" required />
                                 {/*{renderErrorMessage("uname")}*/}
                             </div>
                             <div className="input-container">
@@ -26,8 +26,15 @@ const Login = () => {
                                 {/*{renderErrorMessage("pass")}*/}
                             </div>
                             <div className="button-container">
-                                <button className='btn waves-effect waves-light'  type="submit" name='Login' >
-                                    Login <i className="material-icons right">login</i>
+                                <button
+                                    className="btn waves-effect waves-light"
+                                    type="submit"
+                                    name="Login"
+                                >
+                                    Login{' '}
+                                    <i className="material-icons right">
+                                        login
+                                    </i>
                                 </button>
                             </div>
                         </form>
@@ -36,6 +43,6 @@ const Login = () => {
             </div>
         </>
     )
-};
+}
 
 export default Login
